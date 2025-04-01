@@ -9,7 +9,6 @@
 - 关系R是一个集合
 - $R\subseteq A\times B$
 - $R=\\{(a,b)|a\in A,b\in B,aRb\\}$
-- 
 
 #### 9.1.2函数作为关系
 
@@ -176,8 +175,9 @@ c_{ij}=(a_{i1}\wedge b_{1j})\vee(a_{i2}\wedge b_{2j})\vee...\vee(a_{ik}\wedge b_
 定理：集合S上的关系R是传递的当且仅当 $R^n\subseteq R$ 
 
 证明：
-```math
-充分性：若有R^n\subseteq R,则有R^2\subseteq R \\\\\\  
+
+$$\begin{align\*}
+充分性：若有R^n\subseteq R,则有R^2\subseteq R.\\
 \forall (a,b)\in R,(b,c)\in R,则有(a,c)\in R^2 \\\\\\ 
 \because R^2\subseteq R,\therefore (a,c)\in R \\\\\\
 故关系R具有传递性。 \\\\\\
@@ -186,7 +186,7 @@ c_{ij}=(a_{i1}\wedge b_{1j})\vee(a_{i2}\wedge b_{2j})\vee...\vee(a_{ik}\wedge b_
 假设R^n\subseteq R \\\\\\ \forall (a,c)\in R^{n+1},\exists b\in S使得(a,b)\in R并且(b,c)\in R^n\subseteq R \\\\\\
 \because R具有传递性，\therefore (a,c)\in R \\\\\\
 \therefore R^{n+1}\subseteq R
-```
+\end{align\*}$$
 
 
 定理：如果一个关系R既具有对称性又具有传递性，则它也具有自反性。
@@ -195,11 +195,11 @@ c_{ij}=(a_{i1}\wedge b_{1j})\vee(a_{i2}\wedge b_{2j})\vee...\vee(a_{ik}\wedge b_
 
 令集合R为集合A上的一个关系，P为关系的一个性质（自反，对称，传递），如果R没有该性质P，我们向关系R中添加一些序对使得关系R具有性质P。
 
-**闭包**：令集合R为集合A上的一个关系，P为关系的一个性质，如果有一个关系S，满足$R\subseteq S$，S具有性质P，并且对于任意的具有性质P的关系T并且$R\subseteq T$，都有$S\subseteq T$。
+**闭包**：令集合R为集合A上的一个关系，P为关系的一个性质，如果有一个关系S，满足 $R\subseteq S$ ，S具有性质P，并且对于任意的具有性质P的关系T并且 $R\subseteq T$ ，都有 $S\subseteq T$ 。
 
 > 所谓的闭包，其实就是在原关系R的基础上满足某个性质的最小关系。
 
-**对角关系**：对于任意的集合A，$\Delta=\{(x,x)|x\in A \}$称为A上的对角关系，对角关系对应的矩阵为$I_n$。
+**对角关系**：对于任意的集合A， $\Delta=\\{(x,x)|x\in A \\}$ 称为A上的对角关系，对角关系对应的矩阵为 $I_n$ 。
 
 例：令集合A为{a,b,c}，集合A上的关系R为{(a,b),(a,a),(b,a),(a,c)}，分别求出关系R的自反闭包，对称闭包和传递闭包。
 
@@ -207,87 +207,97 @@ c_{ij}=(a_{i1}\wedge b_{1j})\vee(a_{i2}\wedge b_{2j})\vee...\vee(a_{ik}\wedge b_
 
 我们不难发现：
 
-- 关系R的自反闭包为$R\cup \Delta$，对应的矩阵是$M_R\vee I_n$
-- 关系R的对称闭包为$R\cup R^{-1}$，对应的矩阵是$M_R\vee M_R^{T}$
+- 关系R的自反闭包为 $R\cup \Delta$ ，对应的矩阵是 $M_R\vee I_n$ 
+- 关系R的对称闭包为 $R\cup R^{-1}$ ，对应的矩阵是 $M_R\vee M_R^{T}$ 
 
 真正难求解的是传递闭包。
 
-定义（有向图中的路径）：有向图G中从a到b的路径是一系列连续的边$(x_0,x_1),(x_1,x_2),...(x_{n-1},x_n)$，其中n是非负数，$x_0=a$，$x_n=b$。
+定义（有向图中的路径）：有向图G中从a到b的路径是一系列连续的边 $(x_0,x_1),(x_1,x_2),...(x_{n-1},x_n)$ ，其中n是非负数， $x_0=a$ ， $x_n=b$ 。
 
-- 路径可以表示为$x_0,x_1,...,x_{n-1},x_n$
+- 路径可以表示为 $x_0,x_1,...,x_{n-1},x_n$ 
 - 路径的长度为n
 - 长度大于等于1且a=b的路径称之为回路(circle)或圈(cycle)
 
-定义（二元关系中的路径）：在一个关系R中，如果存在一个元素序列$a=x_0,x_1,...,x_{n-1},b=x_n$，并且$(a,x_1)\in R,(x_1,x_2)\in R,...,(x_{n-1},b)\in R$，那么存在一条从a到b的路径。
+定义（二元关系中的路径）：在一个关系R中，如果存在一个元素序列 $a=x_0,x_1,...,x_{n-1},b=x_n$ ，并且 $(a,x_1)\in R,(x_1,x_2)\in R,...,(x_{n-1},b)\in R$ ，那么存在一条从a到b的路径。
 
-定理：令集合R为集合A上的一个关系，从a到b有一条长度为n的路径当且仅当$(a,b)\in R^n$。
+定理：令集合R为集合A上的一个关系，从a到b有一条长度为n的路径当且仅当 $(a,b)\in R^n$ 。
 
 > 证明过程并不困难。
 
-定义：令R为集合A上的一个关系，对于A中任意两个元素a，b，如果关系R中存在一条长度大于等于1的从a到b的路径，那么就有(a,b)$\in R^*$，称$R^*$为连通性关系。
+定义：令R为集合A上的一个关系，对于A中任意两个元素a，b，如果关系R中存在一条长度大于等于1的从a到b的路径，那么就有(a,b) $\in R^\*$ ，称 $R^\*$ 为连通性关系。
 
-> 从a到b的路径长度可能是1，2，3，...，n，所以$R^*=\cup_{n=1}^\infty R^n$。
+> 从a到b的路径长度可能是1，2，3，...，n，所以 $R^*=\cup_{n=1}^\infty R^n$ 。
 
-定理：关系R的传递闭包等于其连通性关系$R^*$。
+定理：关系R的传递闭包等于其连通性关系 $R^*$ 。
 
 证明：
-$$
-由定义：R\subseteq R^*\\
-如果(a,b)\in R^*并且(b,c)\in R^*\\
+
+$$\begin{align\*} 
+由定义：R\subseteq R^\*\\
+如果(a,b)\in R^\*并且(b,c)\in R^\*\\
 那么就会分别有从a到b的路径以及从b到c的路径\\
-那么我们就获得了一条从a到c的路径,即(a,c)\subseteq R^*\\
+那么我们就获得了一条从a到c的路径,即(a,c)\subseteq R^\*\\
 我们假设有一个关系S并且S具有传递性,R\subseteq S\\
-则有S^n\subseteq S,故S^*\subseteq S\\
-又因为R\subseteq S,所以说R^*\subseteq S^*\subseteq S\\
-所以R^*是R的传递闭包。
-$$
+则有S^n\subseteq S,故S^\*\subseteq S\\
+又因为R\subseteq S,所以说R^\*\subseteq S^\*\subseteq S\\
+所以R^\*是R的传递闭包。\\
+\end{align\*}$$ 
+
 
 引理：设A是含有n个元素的集合，R是集合A上的关系。如果R中存在一条从a到b的长度至少为1的路径，那么这两点之间的存在一条长度不超过n的路径。此外，当a不等于b时，如果R中存在一条从a到b的长度至少为1的路径，那么这两点之间存在一条长度不超过n-1的路径。
 
 > 使用鸽巢原理去证明。
 
 由上述引理，对于一个定义在n元素集上的关系R，其中含有的路径长度最大为n，则
-$$
-R^*=R\cup R^2\cup R^3\cup ...\cup R^n
-$$
+
+$$\begin{align\*}
+R^\*=R\cup R^2\cup R^3\cup ...\cup R^n
+\end{align\*}$$
+
 所以说
-$$
-M_{R^*}=M_R\vee M_{R^2}\vee M_{R^3}\vee...\vee M_{R^n}\\
+
+$$\begin{align\*}
+M_{R^\*}=M_R\vee M_{R^2}\vee M_{R^3}\vee...\vee M_{R^n}\\
 其中M_{R^n}=M_{R^{n-1}\circ R}=M_R\odot M_{R^{n-1}}
-$$
+\end{align\*}$$
+
 这样我们就能得到关系R的传递闭包。
 
-刚开始时，我们需要求出n-1个矩阵的具体元素。计算每个矩阵的具体形式时其实就是计算两个矩阵的布尔积。计算具体元素时，需要n次交运算与n-1次并运算，一共有$n^2$个元素，故一共进行了$n^2(2n-1)$次运算，一共n-1个矩阵，故一共$n^2(2n-1)(n-1)$次运算。
+刚开始时，我们需要求出n-1个矩阵的具体元素。计算每个矩阵的具体形式时其实就是计算两个矩阵的布尔积。计算具体元素时，需要n次交运算与n-1次并运算，一共有 $n^2$ 个元素，故一共进行了 $n^2(2n-1)$ 次运算，一共n-1个矩阵，故一共 $n^2(2n-1)(n-1)$ 次运算。
 
-之后我们需要求n-1次矩阵的并，每一个并运算都需要使用$n^2$次比特运算，因此，这部分计算需要使用$(n-1)n^2$次比特运算。综上，一共需要$n^2(2n-1)(n-1)+n^2(n-1)$,故算法的复杂度为$O(n^4)$。
+之后我们需要求n-1次矩阵的并，每一个并运算都需要使用 $n^2$ 次比特运算，因此，这部分计算需要使用 $(n-1)n^2$ 次比特运算。综上，一共需要 $n^2(2n-1)(n-1)+n^2(n-1)$ ,故算法的复杂度为 $O(n^4)$ 。
 
-但我们可以通过使用其他算法，来把算法的复杂度降低到$O(n^3)$。
+但我们可以通过使用其他算法，来把算法的复杂度降低到 $O(n^3)$ 。
 
 ##### Warshall's Algorithm
 
-沃舍尔算法的基础是构造一系列的0-1矩阵，这些矩阵是$W_0,W_1,...,W_n$，其中$W_0=M_R$，对于矩阵$W_k$中的元素$w_{ij}$，有
-$$
+沃舍尔算法的基础是构造一系列的0-1矩阵，这些矩阵是 $W_0,W_1,...,W_n$ ，其中 $W_0=M_R$ ，对于矩阵 $W_k$ 中的元素 $w_{ij}$ ，有
+
+$$\begin{align\*}
 w_{ij}=w_{ij}\vee(w_{ik}\wedge w_{kj})
-$$
-矩阵$W_k$中的元素$w_{ij}$意味着$v_i$与$v_j$能够通过$\{v_1,v_2,...,v_{k-1}\}$来建立一条路径。
+\end{align\*}$$
 
-在我们计算$w_{ij}$之前，如果$w_{ij}$已然是1，说明$v_i$与$v_j$能够通过$\{v_1,v_2,...,v_{k-1}\}$来建立一条路径，那么$v_i$与$v_j$仍能通过$\{v_1,v_2,...,v_{k-1},v_k\}$来建立一条路径，若$w_{ij}$是0，我们判断$v_i,v_j$能否通过$v_k$作为中介来建立路径(因为$w_{ik}$意味$v_i$和$v_k$能否建立路径，$w_{kj}$意味$v_k$和$v_j$能否建立路径)
+矩阵 $W_k$ 中的元素 $w_{ij}$ 意味着 $v_i$ 与 $v_j$ 能够通过 $\{v_1,v_2,...,v_{k-1}\}$ 来建立一条路径。
 
-等到我们计算到$W_n$时，我们的$w_{ij}$就意味着$v_i$,$v_j$能否通过${v_1,v_2,...,v_n}$来建立路径，这样，我们就得到了传递闭包的矩阵表示。
+在我们计算 $w_{ij}$ 之前，如果 $w_{ij}$ 已然是1，说明 $v_i$ 与 $v_j$ 能够通过 $\{v_1,v_2,...,v_{k-1}\}$ 来建立一条路径，那么 $v_i$ 与 $v_j$ 仍能通过 $\{v_1,v_2,...,v_{k-1},v_k\}$ 来建立一条路径，若 $w_{ij}$ 是0，我们判断 $v_i,v_j$ 能否通过 $v_k$ 作为中介来建立路径(因为 $w_{ik}$ 意味 $v_i$ 和 $v_k$ 能否建立路径， $w_{kj}$ 意味 $v_k$ 和 $v_j$ 能否建立路径)
 
-我们每计算一次矩阵$W_k$，其中的一个元素的计算需要2次比特运算，而一共有$n^2$个元素，故一共进行了$2n^2$的运算，而我们一共计算了n个矩阵，所以一共做了$2n^3$次比特运算，故其时间复杂度为$O(n^3)$。
+等到我们计算到 $W_n$ 时，我们的 $w_{ij}$ 就意味着 $v_i$,$v_j$ 能否通过 ${v_1,v_2,...,v_n}$ 来建立路径，这样，我们就得到了传递闭包的矩阵表示。
+
+我们每计算一次矩阵 $W_k$ ，其中的一个元素的计算需要2次比特运算，而一共有 $n^2$ 个元素，故一共进行了 $2n^2$ 的运算，而我们一共计算了n个矩阵，所以一共做了 $2n^3$ 次比特运算，故其时间复杂度为 $O(n^3)$ 。
 
 
 ### 9.5等价关系
 
 定义：同时满足自反，对称，传递的关系称为等价关系。
 
-设R是集合A上的一个关系，若$(a,b)\in R$，那么我们称a和b是等价的。记作$a\thicksim b$。
+设R是集合A上的一个关系，若 $(a,b)\in R$ ，那么我们称a和b是等价的。记作 $a\thicksim b$ 。
 
-所有与a等价的元素构成的集合称为a的等价类，记作$[a]_R$
-$$
+所有与a等价的元素构成的集合称为a的等价类，记作 $[a]_R$ 
+
+$$\begin{align\*}
 [a]_R=\{s|(a,s)\in R\}
-$$
+\end{align\*}$$
+
 等价类中的任意一个元素可以被挑选出来作为代表元。
 
 > 实际上我们不难发现，因为等价类中的元素都是相互等价的，所以把哪个元素作为代表元并不重要。比如说模m的同余类。
@@ -298,13 +308,13 @@ $$
 - $[a]_R=[b]_R$
 - $[a]_R\cap [b]_R\neq \varnothing$
 
-所以，我们可以使用等价关系来划分集合A，换言之，各等价类构成了集合A的一个划分，即$A=\bigcup_{a\in A}{[a]_R}$
+所以，我们可以使用等价关系来划分集合A，换言之，各等价类构成了集合A的一个划分，即 $A=\bigcup_{a\in A}{[a]_R}$ 
 
 定理：设R是定义在集合S上的等价关
 
-系，那么R的等价类构成了S的划分。反过来，给定集合S的划分$\{A_i|i\in I\}$，则存在一个等价关系R，它以集合$A_i(i\in I)$作为它的等价类。
+系，那么R的等价类构成了S的划分。反过来，给定集合S的划分 $\{A_i|i\in I\}$ ，则存在一个等价关系R，它以集合 $A_i(i\in I)$ 作为它的等价类。
 
-设$R_1,R_2$是集合S上的两个等价关系，那么$R_1\cap R_2$仍为等价关系，但是$R_1\cup R_2$却不一定是等价关系。
+设 $R_1,R_2$ 是集合S上的两个等价关系，那么 $R_1\cap R_2$ 仍为等价关系，但是 $R_1\cup R_2$ 却不一定是等价关系。
 
 如何寻找一个关系的等价闭包？
 
@@ -315,62 +325,66 @@ $$
 集合S与定义在其上的偏序R一起被称为偏序集(poset)，记为(S,R)。集合S中的成员称为偏序集的元素。
 
 例：
-$$
-(1)R_1=\{(a,b)|a\leqslant b,a,b\in Z\}\\
-(2)R_2=\{(a,b)|a|b,a,b\in Z\}\\
-(3)R_3=\{(s_1,s_2)|s_1\subseteq s_2,s_1,s_2\in P(S)\}\\
-$$
+
+$$\begin{align\*}
+(1)R_1=\\{(a,b)|a\leqslant b,a,b\in Z\\}\\
+(2)R_2=\\{(a,b)|a|b,a,b\in Z\\}\\
+(3)R_3=\\{(s_1,s_2)|s_1\subseteq s_2,s_1,s_2\in P(S)\\}\\
+\end{align\*}$$
 
 > 注意在(3)中，如果是真子集，那么将不是偏序关系
 
 偏序关系有好多种表达形式：
-$$
+
+$$\begin{align\*}
 有很多符号可以使用：比如说\leqslant,\preccurlyeq
-$$
+\end{align\*}$$
 
-> 值得注意的是，下文中提到的$\preccurlyeq$只是偏序关系的记号，而并不是小于等于的意思，但是我们可以念作小于（个人觉得这样只是为了方便而已），而记号$\prec$表示$a\preccurlyeq b$且$a\neq b$。
+> 值得注意的是，下文中提到的 $\preccurlyeq$ 只是偏序关系的记号，而并不是小于等于的意思，但是我们可以念作小于（个人觉得这样只是为了方便而已），而记号 $\prec$ 表示 $a\preccurlyeq b$ 且 $a\neq b$ 。
 
-偏序集$(S,\preccurlyeq)$中的元素a和b如果有$a\preccurlyeq b$或者$b\preccurlyeq a$，那么元素a和b叫做“可比的”，但当a和b是S的元素并且既没有$a\preccurlyeq b$或者$b\preccurlyeq a$（也就是偏序关系R中没有序偶(a,b)或者序偶(a,b)），我们就称a和b是不可比的。
+偏序集 $(S,\preccurlyeq)$ 中的元素a和b如果有 $a\preccurlyeq b$ 或者 $b\preccurlyeq a$ ，那么元素a和b叫做“可比的”，但当a和b是S的元素并且既没有 $a\preccurlyeq b$ 或者 $b\preccurlyeq a$ （也就是偏序关系R中没有序偶(a,b)或者序偶(a,b)），我们就称a和b是不可比的。
 
 > 比如说，在偏序集(Z,|)中，3与9就是可比的，但是5和7是不可比的。
 
-如果$(S,\preccurlyeq)$是偏序集，且S的每对元素都是可比的，则S叫做全序集(totally ordered)或线序集(linearly ordered set)，且$\preccurlyeq$叫做全序(total order)或线序(linear order)，一个全序也叫做链(chain)。
+如果 $(S,\preccurlyeq)$ 是偏序集，且S的每对元素都是可比的，则S叫做全序集(totally ordered)或线序集(linearly ordered set)，且 $\preccurlyeq$ 叫做全序(total order)或线序(linear order)，一个全序也叫做链(chain)。
 
-> 比如说，在全序集(Z,$\leqslant$)中，任意两个元素都是可比的，因为任意的两个整数，都一定会有大小关系。
+> 比如说，在全序集(Z, $\leqslant$ )中，任意两个元素都是可比的，因为任意的两个整数，都一定会有大小关系。
 
 #### 字典顺序
 
 Lexicographic Order(字典顺序)：构造在偏序集的笛卡尔积上的一个偏序。
 
-我们现有两个偏序集$(A_1,\preccurlyeq_1)$与$(A_2,\preccurlyeq_2)$，我们在$A_1\times A_2$上定义的字典顺序$\preccurlyeq$如下：
-$$
+我们现有两个偏序集 $(A_1,\preccurlyeq_1)$ 与 $(A_2,\preccurlyeq_2)$ ，我们在 $A_1\times A_2$ 上定义的字典顺序 $\preccurlyeq$ 如下：
+
+$$\begin{align\*}
 (a_1,a_2)\preccurlyeq(b_1,b_2)成立，当且仅当：\\
 a_1\prec b_1或者a_1=b_1且a_2\preccurlyeq b_2
-$$
+\end{align\*}$$
 
 > 想想英语词典中单词的出现顺序，思考一下为什么字典顺序会这样定义。
 
-我们不难证明字典顺序就是一个偏序，偏序集为$(A_1\times A_2,\preccurlyeq)$
+我们不难证明字典顺序就是一个偏序，偏序集为 $(A_1\times A_2,\preccurlyeq)$ 
 
 我们同样可以定义n个偏序集上的字典顺序，道理相同。
 
 我们类比英语词典中单词的出现顺序，想想字符串的字典顺序：
-$$
+
+$$\begin{align\*}
 字符串a_1a_2...a_m与字符串b_1b_2...b_n\\
 (a_1,a_2,...,a_{t_1})\prec(b_1,b_2,...,b_{t_2})有两种情况：\\
 一、a_i=b_i(1\leqslant i\leqslant k\leqslant n-1)并且a_{k+1}\prec b_{k+1}\\
 二、a_i=b_i(1\leqslant i\leqslant min(t_1,t_2))并且t_1\leqslant t_2\\
+\end{align\*}$$
 
-
-$$
 我们给出下面的例子：
 
 现有五个字符串，分别是discrete，discredit，discreet，discreteness，discretion，请按照字母表中字母的顺序给出字典顺序。
-$$
-discredit\prec discreet\prec discrete\prec discreteness\prec discretion
-$$
 
-> 我们来解释一下为什么会这样排序，我们发现五个字符串的前六个字母是相同的，都是discre，而d在e前，所以discredit$\prec$discreet，而e在t前，所以discredit$\prec$discreet$\prec$discrete，再加上discrete的长度小于discreteness，于是discredit$\prec$discreet$\prec$discrete$\prec$discreteness，而e在i前，所以有discreteness$\prec$discretion，于是discredit$\prec$discreet$\prec$discrete$\prec$discreteness$\prec$discretion。
+$$\begin{align\*}
+discredit\prec discreet\prec discrete\prec discreteness\prec discretion
+\end{align\*}$$
+
+> 我们来解释一下为什么会这样排序，我们发现五个字符串的前六个字母是相同的，都是discre，而d在e前，所以discredit $\prec$ discreet，而e在t前，所以discredit $\prec$ discreet $\prec$ discrete，再加上discrete的长度小于discreteness，于是discredit $\prec$ discreet $\prec$ discrete $\prec$ discreteness，而e在i前，所以有discreteness $\prec$ discretion，于是discredit $\prec$ discreet $\prec$ discrete $\prec$ discreteness $\prec$ discretion。
 
 #### 哈塞图
 
@@ -388,27 +402,27 @@ $$
 
 4.去掉边上的箭头
 
-$(S,\leqslant)$为一个偏序集，如果$B\subseteq S$，若$(B,\leqslant)$是一个全序集，那么就称B是S的一个链。但是若$\forall a,b\in B(a\neq b)$,$(a,b)\notin R$并且$(b,a)\notin R$，那么就称B为S的一个反链。
+ $(S,\leqslant)$ 为一个偏序集，如果 $B\subseteq S$ ，若 $(B,\leqslant)$ 是一个全序集，那么就称B是S的一个链。但是若 $\forall a,b\in B(a\neq b)$ , $(a,b)\notin R$ 并且 $(b,a)\notin R$ ，那么就称B为S的一个反链。 
 
-极大元：不小于偏序集中任何其他元素，即不存在b$\in S$使得$a\prec b$，那么a就是极大元。
+极大元：不小于偏序集中任何其他元素，即不存在b $\in S$ 使得 $a\prec b$ ，那么a就是极大元。
 
 - 一个偏序集中可能会有好多极大元
 
-极小元：不大于偏序集中任何其他元素，即不存在$b\in S$使得$b\prec a$，那么a就是极小元。
+极小元：不大于偏序集中任何其他元素，即不存在 $b\in S$ 使得 $b\prec a$ ，那么a就是极小元。
 
 - 一个偏序集中也可能有好多个极小元
 
-最大元：大于偏序集中任何其他元素，即$\forall b\in S$，就会有$b\prec a$，那么a就是最大元。
+最大元：大于偏序集中任何其他元素，即 $\forall b\in S$ ，就会有 $b\prec a$ ，那么a就是最大元。
 
 - 一个偏序集中可能没有最大元。
 
-最小元：小于偏序集中任何其他元素，即$\forall b\in S$，就会有$a\prec b$，那么称a是最小元。
+最小元：小于偏序集中任何其他元素，即 $\forall b\in S$ ，就会有 $a\prec b$ ，那么称a是最小元。
 
 - 一个偏序集中可能没有最小元。
 
 > 定理：最大(小)元如果存在，则是唯一的。
 
-上界：现有一个偏序集$(S,\leqslant)$，令集合A是S的一个子集，如果存在一个$a\in S$，使得$\forall b\in A,b\prec a$，就称a为A的一个上界。
+上界：现有一个偏序集 $(S,\leqslant)$ ，令集合A是S的一个子集，如果存在一个 $a\in S$ ，使得 $\forall b\in A,b\prec a$ ，就称a为A的一个上界。
 
 上确界（最小上界）：上界中的最小元为上确界。
 
@@ -417,22 +431,27 @@ $(S,\leqslant)$为一个偏序集，如果$B\subseteq S$，若$(B,\leqslant)$是
 良序集：偏序集的任意子集都有最小元，则该偏序集都称为良序集
 
 - 任意的良序集都是全序
-- 全序不一定是良序，比如说$(Z,\leqslant)$
+- 全序不一定是良序，比如说 $(Z,\leqslant)$ 
 
 例：
-$$
-(1)A=\{1,2,3,...,n\},(A,\leqslant)\\
-(2)A=\{0<x<1\},(A,\leqslant)\\
-$$
+
+$$\begin{align\*}
+(1)A=\\{1,2,3,...,n\\},(A,\leqslant)\\
+(2)A=\\{0\leq x\leq 1\\},(A,\leqslant)\\
+\end{align\*}$$
+
+
 格：如果一个偏序集的每对元素都有最小上界和最大下界，就称这个偏序集为格。
 
 - 所有的全序都是格，但并非所有的偏序集都是格
 
 例：
-$$
+
+$$\begin{align\*}
 (1)(Z,\leqslant)\\
 (2)(Z^+,|)\\
 (3)(P(S),\subseteq)
-$$
+\end{align\*}$$
+
 
 > 对于(2)，每对元素的最小上界就是两个数的最大公倍数，最大下界为最大公因数；对于(3)，每对元素的最小上界是两个子集的并集，最大下界为两个子集的交集。
