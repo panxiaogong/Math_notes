@@ -151,3 +151,148 @@
 如果一个变量的值为真或为假,则此变量称为布尔变量(Boolean variable)
 
 计算机的比特运算(bit operations,或称为位运算)
+
+## 命题等价式
+
+
+用真值相同的语句替换另一条语句是数学证明中常用的(认真体会),因此,从给定符合命题生成相同真值命题的方法广泛用于数学构造.
+
+#### 永真,矛盾,可能
+
+定义:一个真值永远是真的复合命题(无论其中出现的命题变量的值是什么),称为永真式(tautology),也称为重言式.一个真值永远为假的复合命题称为矛盾式(contradiction).既不是永真式又不是矛盾式的复合命题称为可能式(contingency).
+
+> 我们其实可以只用一个变量便可以构造出永真式和矛盾式,比如说 $p\wedge\neg p$ 便是一个矛盾式,而 $p\vee \neg p$ 便是一个永真式
+
+### 逻辑等价式
+
+在所有可能的情况下都具有相同真值的两个复合命题称为逻辑等价的.我们也可以如下定义:
+
+如果 $p\leftrightarrow q$ 是永真式,则复合命题p和q是逻辑等价(logically equivalent)的.用记号 $p\equiv q$ 来表示(也可以用 $p\Leftrightarrow q$ 来表示)
+
+> 需要注意的是,符号" $\equiv$ "并不是一个逻辑联结词， $p\equiv q$ 也不是一个复合命题.
+
+我们可以用真值表去证明逻辑等价式,但是一旦变量数量变多真值表就会难以绘制,所以我们给出一些基本的逻辑等价式:
+
+- $p\wedge T\equiv p$\
+  $p\vee F\equiv p$(恒等律Identity laws)
+
+- $p\vee T\equiv T$\
+  $p\wedge F\equiv F$(支配律Domination laws)
+
+- $p\vee p\equiv p$\
+  $p\wedge p\equiv p$(幂等律Idempotent laws)
+
+- $\neg(\neg p)$(双重否定律Double negation law)
+
+- $p\vee q\equiv q\vee p$
+
+  $p\wedge q\equiv q\wedge p$(交换律Commutative law)
+
+- $(p\vee q)\vee r\equiv p\vee(q\vee r)$\
+  $(p\wedge q)\wedge r\equiv p\wedge(q\wedge r)$(结合律Associate law)
+
+- $p\vee(q\wedge r)\equiv (p\vee q)\wedge(p\vee r)$\
+  $p\wedge(q\vee r)\equiv(p\wedge q)\vee(p\wedge r)$(分配律Distributive laws)
+
+- $\neg(p\vee q)\equiv \neg p\wedge\neg q$\
+  $\neg(p\wedge q)\equiv\neg p\vee \neg q$(德摩根律De Morgan's laws)
+
+- $p\vee(p\wedge q)\equiv p$\
+  $p\wedge(p\vee q)\equiv p$(吸收律Absorption laws)
+
+- $p\vee\neg p\equiv T$\
+  $p\wedge \neg p\equiv F$(否定律Negation laws)
+
+条件命题的逻辑等价式
+
+- $(p\wedge q)\rightarrow r\equiv p\rightarrow(q\rightarrow r)$(Exportation law)
+
+- $p\rightarrow q\equiv\neg p\vee q$
+
+- $p\rightarrow q\equiv\neg q\rightarrow \neg p$
+
+- $p\vee q\equiv \neg p\rightarrow q$
+
+- $p\wedge q\equiv \neg(p\rightarrow \neg q)$
+
+- $\neg(p\rightarrow q)\equiv p\wedge\neg q$
+
+- $(p\rightarrow q)\wedge (p\rightarrow r)\equiv p\rightarrow(q\wedge r)$
+
+- $(p\rightarrow q)\vee(p\rightarrow r)\equiv p\rightarrow(q\vee r)$
+
+- $(p\rightarrow r)\wedge(q\rightarrow r)\equiv(p\vee q)\rightarrow r$
+
+- $(p\rightarrow r)\vee(q\rightarrow r)\equiv (p\wedge q)\rightarrow r$
+
+- $(p\rightarrow q)\wedge(p\rightarrow\neg q)\equiv \neg p$
+
+  
+
+双条件命题的逻辑等价式
+
+- $p\leftrightarrow q\equiv(p\rightarrow q)\wedge(q\rightarrow p)$
+
+- $p\leftrightarrow q\equiv\neg p\leftrightarrow \neg q$
+
+- $p\leftrightarrow q\equiv(p\wedge q)\vee(\neg p\wedge \neg q)$
+
+- $\neg(p\leftrightarrow q)\equiv p\leftrightarrow \neg q$
+
+  
+
+### 德摩根律的应用
+
+实际上,德摩根律可以扩展为n个命题的形式
+
+$\neg(p_1\vee p_2\vee...\vee p_n)\equiv(\neg p_1\wedge\neg p_2\wedge...\wedge\neg p_n)$
+
+$\neg(p_1\wedge p_2\wedge...\wedge p_n)\equiv(\neg p_1\vee\neg p_2\vee...\vee\neg p_n)$
+
+我们当然还可以写的更简洁:
+
+$\neg\bigvee^n_{j=1}p_j\equiv\bigwedge^n_{j=1}\neg p_j$
+
+$\neg\bigwedge^n_{j=1}p_j\equiv\bigvee^n_{j=1}\neg p_j$
+
+### 构造新的逻辑等价式
+
+其实就是灵活使用各种逻辑等价式来进行化简之类的,不过多赘述
+
+### 补充
+
+定义:命题变元及其否定统称为文字,一些文字的合取称为基本合取式或短语,一些文字的析取称为基本析取式或句子.
+
+(1)disjunctive normal form: 假设 $A_i$ (i=1,2,...,n)为基本合取式,则 $A=A_1\vee A_2\vee...\vee A_n$ 称为析取范式
+
+(2)conjunctive normal form:假设 $A_i$ (i=1,2,...,n)为基本析取式,则 $A=A_1\wedge A_2\wedge...\wedge A_n$ 称为合取范式
+
+任何一个命题公式都存在与它等价的析取范式和合取范式
+
+极大项:包含全部数目的命题变元的析取表达式
+        极小项:包含全部数目的命题变元的合取表达式
+
+主析取范式:仅由最小项的析取构成的等值式
+	主合取范式:仅由最大项的合取构成的等值式
+
+例:求 $(p\wedge q)\vee r$ 的主析取范式和主合取范式
+
+主析取范式:
+
+$(p\wedge q)\vee r\equiv(p\wedge q\wedge r)\vee(p\wedge q\wedge \neg r)\vee(\neg p\wedge q\wedge r)\vee(p\wedge \neg q\wedge r)\vee(\neg p\wedge \neg q\wedge r)$ 
+
+主合取范式:
+
+ $(p\wedge q)\vee r\equiv(r\vee p)\wedge(r\vee q)\equiv(r\vee p\vee \neg q)\wedge(r\vee p\vee q)\wedge(r\vee\neg p\vee q)$ 
+
+
+
+### 可满足性
+
+一个复合命题称为是可满足的,如果存在一个对其变量的真值赋值使其为真(也就是说,当他是一个永真式或者说是可满足式的时候).当不存在这样的赋值时,即当复合命题对所有变量的真值赋值都是假的,则复合命题是不可满足的.
+
+一个复合命题是不可满足的当且仅当它的否定是永真式
+
+当我们找到一个特定的使得复合命题为真的真值赋值时,就证明了它是可满足的.这样的赋值称为这个特定的可满足性的问题的一个解.
+
+
