@@ -296,3 +296,97 @@ $(p\wedge q)\vee r\equiv(p\wedge q\wedge r)\vee(p\wedge q\wedge \neg r)\vee(\neg
 当我们找到一个特定的使得复合命题为真的真值赋值时,就证明了它是可满足的.这样的赋值称为这个特定的可满足性的问题的一个解.
 
 
+## 谓词和量词
+
+### 谓词
+
+一般地,涉及n个变量 $x_1,x_2,...,x_n$ 的语句可以表示成为P( $x_1,x_2,...,x_n$ ),形式为P( $x_1,x_2,...,x_n$ )的语句是命题函数P在n元组( $x_1,x_2,...,x_n$ )的值,P也称为n元谓词或者n位谓词.
+
+### 量词
+
+量化是一种方式，一种从命题函数生成一个命题的方式。量化表示在何种程度上谓词对于一定范围内的个体成立.
+
+> 处理谓词和量词的逻辑领域成为谓词演算
+
+变量的取定区域称为变量的论域(domain of discourse),或全体域(universe of discourse),时常简称为域.
+值得注意的是,当我们改变命题的论域时,命题的量化的意义也会随着而改变,在我们使用量词时必须指定论域,否则语句的量化就是无意义的
+
+定义1:P(x)的全称量化是语句"P(x)对x在其论域的所有值为真",符号 $\forall xP(x)$ 表示P(x)的全称量化.符号 $\forall$ 称为全称量词(universial quantifiers).
+
+> 注意,如果论域为空,那么 $\forall xP(x)$ 对任何命题函数P(x)都为真,因为论域中不存在x使x为假
+
+定义2:P(x)的存在量化是命题"论域中存在一个个体x满足P(x)",我们用 $\exists xP(x)$ 来表示,其中 $\exists$ 称为存在量词(existential quantifiers)
+
+> 注意,如果论域为空,那么 $\exists xP(x)$ 对任何命题函数P(x)为假,因为没有一个个体x使P(x)为真.
+
+> 其实我们还会有唯一性量词,用符号 $\exists !$ 或者是 $\exists _1$ 
+
+### 有限域上的量词
+
+当论域中的元素为有限个时,比如 $x_1,x_2,...,x_n$ ,则全称量词命题 $\forall xP(x)\equiv P(x_1)\wedge P(x_2)\wedge...\wedge P(x_n)$ 
+
+> 要证明上述结论并不困难,我们只需要证当等式左侧真值为1时等式右侧的真值也为1,当等式右侧真值为1时等式左侧真值也为1.
+
+同样地,存在量词命题 $\exists xP(x)\equiv P(x_1)\vee P(x_2)\vee...\vee P(x_n)$ 
+
+> 证明这个与证明全称量词的并不相同,这里我们证明当等式左侧真值为0时等式右侧真值也为0,当等式右侧真值为0时等式左侧真值也为0.
+
+### 受限域的量词
+
+在我们限定一个量词的论域时,有时会把变量必须满足的条件直接放在量词后面,比如说 $\forall x<0(x^2>0)$ , $\exists z>0(z^2=2)$ 等等.
+
+注意,受限的全称量化和一个条件语句的全称量化等价, $\forall x<0(x^2>0)$ 等价于 $\forall x(x<0\rightarrow x^2>0)$ ,另一方面,受限的存在量化和一个合取式的存在量化等价, $\exists z>0(z^2=2)$ 等价于 $\exists z(z>0\wedge z^2=2)$ .
+
+> 实际上我们在后来学习将自然语言翻译成命题语言的过程中,也会了解到全称量词一般会和条件语句联系在一起,而存在量词会和合取表达式联系在一起.
+
+### 量词的优先级
+
+量词 $\forall$ 和 $\exists$ 比命题演算中的所有逻辑运算符都具有更高的优先级
+
+### 变量绑定
+
+当量词作用于变量x时,我们说此变量的这次出现为约束的.一个变量的出现被称为是自由的,如果没有被量词约束或者设置为某一特定值.
+
+而命题函数中的所有变量必须是约束的或者被设置为等于某一个特定值的,才能把他转变为一个命题,这可以通过采用一组全程量词,存在量词,赋值来实现.
+
+逻辑表达式中一个量词作用到的部分称为量词的作用域.一个量词是自由的当且仅当它在公式中所有限定该变量的量词作用域之外.
+
+> 值得注意的是,我们经常会用同一个字母表示不同量词约束的变量,只要其作用域不重叠的.
+
+### 涉及量词的逻辑等价式
+
+$$\begin{align\*}
+\forall x(A(x)\wedge B(x))\Leftrightarrow \forall xA(x)\wedge\forall xB(x)\\
+\exists x(A(x)\vee B(x))\Leftrightarrow \exists xA(x)\vee\exists xB(x)\\
+\forall xA(x)\vee\forall xB(x)\Rightarrow\forall x(A(x)\vee B(x))\\
+\exists x(A(x)\wedge B(x))\Rightarrow\exists xA(x)\wedge\exists xB(x)\\
+\end{align\*}$$
+
+> 值得注意的是最后两行是" $\Rightarrow$ ",也就是说,全称量词与合取搭配,存在量词与析取搭配.要证明上述结论也非常容易,将论域分为互不相交的两部分,一部分内的x使A(x)为真而B(x)为假,而另一部分使A(x)为假而B(x)为真,便可证明后两行公式左右两侧的真值并不为真。
+
+$$\begin{align\*}
+x\; is\; not\; occuring\; in\; P\; and\; B.\\
+\forall xA(x)\vee P\Leftrightarrow \forall x(A(x)\vee P)\\
+\forall xA(x)\wedge P\Leftrightarrow \forall x(A(x)\wedge P)\\
+\exists xA(x)\vee P\Leftrightarrow \exists x(A(x)\vee P)\\
+\exists xA(x)\wedge P\Leftrightarrow\exists x(A(x)\wedge P)\\
+\forall x(B\rightarrow A(x))\Leftrightarrow B\rightarrow\forall xA(x)\\
+\exists x(B\rightarrow A(x))\Leftrightarrow B\rightarrow \exists xA(x)\\
+\forall x(A(x)\rightarrow B)\Leftrightarrow \exists xA(x)\rightarrow B\\
+\exists x(A(x)\rightarrow B)\Leftrightarrow\forall xA(x)\rightarrow B\\
+\end{align\*}$$
+
+> 也就是说,当出现量词与合取或者析取时,括号的作用其实并不大,当出现量词与条件语句时,则要注意命题函数的位置.如果命题函数位于条件语句的结论处,那么括号的作用其实也不大,但如果命题函数位于条件语句的假设处,那么去掉括号后量词就会发生变化.
+
+### 量化表达式的否定
+
+$$\begin{align\*}
+\neg\exists xA(x)\equiv\forall x\neg A(x)\\
+\neg\forall xA(x)\equiv\exists x\neg A(x)\\
+\end{align\*}$$
+
+> 量词的否定规则被称为量词的德摩根律,其实我们不难发现,当论域中的元素为有限个时,量词的德摩根律与我们之前提到过的德摩根律完全相同
+
+### 语句到逻辑表达式的翻译
+
+判断是全称量词命题还是存在量词命题其实并不困难,困难的事情其实在于如何使用命题函数来表述.实际上,当我们在表述全称量词命题时通常会使用条件语句,表述存在量词命题时通常会使用合取表达式.
