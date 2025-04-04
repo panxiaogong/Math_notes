@@ -377,7 +377,7 @@ $(p\wedge q)\vee r\equiv(p\wedge q\wedge r)\vee(p\wedge q\wedge \neg r)\vee(\neg
 逻辑表达式中一个量词作用到的部分称为量词的作用域。\
 一个变量是自由的当且仅当它在公式中所有限定该变量的量词作用域之外.
 
-比如说 $\forall x<0(x^2>0)$ ，变量x就是被约束的。再比如说 $\exists y(P(y)\wedge Q(y))$ ，$(P(y)\wedge Q(y))$ 就是该命题中存在量词的作用域。
+比如说 $\forall x<0(x^2>0)$ ，变量x就是被约束的。再比如说 $\exists y(P(y)\wedge Q(y))$ ， $(P(y)\wedge Q(y))$ 就是该命题中存在量词的作用域。
 
 > 值得注意的是，我们经常会用同一个字母表示不同量词约束的变量，只要其作用域不重叠的。
 
@@ -425,3 +425,77 @@ $$\begin{align\*}
 
 判断是全称量词命题还是存在量词命题其实并不困难，困难的事情其实在于如何使用命题函数来表述。\
 实际上，当我们在表述全称量词命题时通常会使用条件语句，表述存在量词命题时通常会使用合取表达式。
+
+## 嵌套量词
+
+
+嵌套量词(nested quantifiers)，即一个量词出现在另一个量词的作用域内，如 $\forall x\exists y(x+y=0)$ 。
+
+> 值得注意的是，量词范围内的一切都可以认为是一个命题函数，也就是说，对于 $\forall x\exists y(x+y=0)$ ，我们可以将其看作是 $\forall xQ(x)$ ,其中Q(x)表示 $\exists yP(x,y)$ ,而P(x,y)表示x+y=0。
+
+### 理解涉及嵌套量词的语句
+
+我们可以把嵌套量词当成多重循环去处理，尤其是当论域中的元素为有限个的时候。其实和剥洋葱差不多，先剥掉最外面的变量，再剥掉倒数第二个，以此类推。
+
+### 量词的顺序
+
+许多数学语句会涉及对多变量命题函数的多重量化。量词的顺序是很重要的，除非所有量词均为全称量词或者存在量词。\
+比如说 $\exists y\forall x(x+y=0)$ 和 $\forall x\exists y(x+y=0)$ ,前者表示有一个y对于任意的x都会有x+y=0，而后者表示对于任意的x都会存在一个y使得x+y=0。显然前者为假命题，而后者为真命题。
+
+
+原理：在没有其他量词的语句中，在不改变量化式意义的前提下，嵌套全称量词的顺序是可以改变的。\
+比如说， $\forall x\forall y\forall z((x+y)+z=x+(y+z))$ 中的 $\forall x\forall y\forall z$ 还可以写为 $\forall y\forall x\forall z$ 等等，但只有嵌套的全称量词才可以这样写。
+
+
+### 数学语句到嵌套量词语句的翻译
+
+例：除了0以外的每个实数都有一个乘法逆元。
+
+$$\begin{align\*}
+\forall x\exists y(x\neq0\rightarrow xy=1)
+\end{align\*}$$
+
+例：用量词表示实变量x的实函数f(x)在其定义域中点a处的极限的定义
+
+$$\begin{align\*}
+\forall\varepsilon>0\exists\delta>0\forall x(0<|x-a|<\delta\rightarrow|f(x)-L|<\varepsilon)
+\end{align\*}$$
+
+那么我们实际上可以表述的更复杂一些：
+
+令命题R(x)表示x是实数，P(x,y)表示x<y,我们还可以把定义写为：
+
+$$\begin{align\*}
+\forall\varepsilon(R(\varepsilon)\wedge P(0,\varepsilon)\rightarrow\exists\delta(R(\delta)\wedge P(0,\delta)\wedge\forall x(R(x)\wedge P(|x-a|,\delta)\rightarrow P(|f(x)-L|,\varepsilon))))
+\end{align\*}$$
+
+
+### 自然语句到逻辑表达式的翻译
+
+例：每个人恰好有一个最好的朋友
+
+引入谓词B(x,y)表示y是x的最好的朋友
+
+$$\begin{align\*}
+\forall x\exists y(B(x,y)\wedge\forall z((y\neq z)\rightarrow\neg B(x,z))
+\end{align\*}$$
+
+例：有一位妇女搭乘过世界上每一条航线上的一个航班
+
+令P(w,f)为“w搭乘过航班f”，Q(f,a)为“f是a上的一条航班”
+
+$$\begin{align\*}
+\exists w\forall a\exists f(P(w,f)\wedge Q(f,a))
+\end{align\*}$$
+
+### 嵌套的量词的否定
+
+前面说过理解嵌套量词语句就像剥洋葱，对吧。\
+实际上，嵌套量词语句的否定也就像剥洋葱。把否定词一层一层地往里放。
+
+$$\begin{align\*}
+\neg\forall x\exists y(xy=1)\\
+\Leftrightarrow \exists x\neg \exists y(xy=1)\\
+\Leftrightarrow \exists x\forall y\neg(xy=1)\\
+\Leftrightarrow \exists x\forall y(xy\neq 1)\\
+\end{align\*}$$
