@@ -10,11 +10,11 @@
 >
 > 但是有一些奇怪语句，虽然看上去不合理，但却是一个命题，比如“我吃了一百粒米”，这个语句要么为真要么为假，它确实是一个命题。
 
-我们习惯上用字母p,q,r,s,...来表示命题变量(propositional variables)(语句变量sentential variables),即表示命题的变量.
+我们习惯上用字母p,q,r,s,...来表示命题变量(propositional variables)(语句变量sentential variables)，即表示命题的变量。
 
-如果一个命题是真命题,则他的真值(truth value)为真,用T表示,反之则真值为假,用F表示.
+如果一个命题是真命题，则他的真值(truth value)为真，用T表示，反之则真值为假，用F表示。
 
-另外,不能用简单命题来表示的命题称为原子命题(atomic proposition),换句话说，原子命题不能被分解为更简单的陈述句。
+另外，不能用简单命题来表示的命题称为原子命题(atomic proposition)，换句话说，原子命题不能被分解为更简单的陈述句。
 由已知命题用逻辑运算符(logic operators)组合而来的新命题被称为复合命题(compound propositions)。
 
 > 涉及命题的逻辑领域称为命题演算(propositional calculus)或命题逻辑(propositional logic)
@@ -85,13 +85,15 @@
 - $\neg q\rightarrow \neg p$为其逆否(倒置)命题(contrapositive)
 - $\neg p\rightarrow \neg q$为其反命题(inverse)
 
-但只有逆否命题总是与原命题具有相同的真值.
+但只有逆否命题总是与原命题具有相同的真值。
 
-当两个复合命题总是具有相同的真值时,无论其命题变量的真值是什么,我们称他们是等价的.因此一个条件语句与它的逆否命题是等价的,逆命题和反命题是等价的
+当两个复合命题总是具有相同的真值时，无论其命题变量的真值是什么，我们称他们是等价的。
+因此一个条件语句与它的逆否命题是等价的,逆命题和反命题是等价的
 
 #### 双条件语句
 
-令p,q为命题,双条件语句(biconditional statement) $p \leftrightarrow q$ 是命题"p当且仅当q(p if and only if q)",当p和q具有相同的真值时,双条件语句为真,否则为假.双条件语句也被称为双向蕴含(bi-implications)
+令p,q为命题，双条件语句(biconditional statement) $p \leftrightarrow q$ 是命题“p当且仅当q(p if and only if q)”，当p和q具有相同的真值时，双条件语句为真，否则为假。
+双条件语句也被称为双向蕴含(bi-implications)
 
 |  P   |  Q   | $p \leftrightarrow q$ |
 | :--: | :--: | :-------------------: |
@@ -108,7 +110,7 @@
 
 - p是q的充分必要条件(p is necessary and sufficient for q)
 
-- 如果p那么q,反之亦然(if p then q, and conversely)
+- 如果p那么q，反之亦然(if p then q, and conversely)
 
 - p当且仅当q(p iff q)
 
@@ -120,7 +122,7 @@
 
 ### 复合命题的真值表
 
-一图胜千言,直接上图
+一图胜千言，直接上图
 
 |  p   | q    | $\neg Q$ | $P\vee \neg Q$ | $P\wedge Q$ | $P\vee \neg Q\rightarrow P\wedge Q$ |
 | :--: | ---- | :------: | :------------: | :---------: | :---------------------------------: |
@@ -129,13 +131,13 @@
 |  F   | T    |    F     |       F        |      F      |                  T                  |
 |  F   | F    |    T     |       T        |      F      |                  F                  |
 
-就是说,采用单独的列来找出复合命题的构造过程中出现的每个复合表达式的值
+就是说，采用单独的列来找出复合命题的构造过程中出现的每个复合表达式的值
 
 ### 逻辑运算符的优先级
 
 (Precedence of Logical Operators)
 
-其实,圆括号()具有最高的优先级,其次才是逻辑运算符
+其实，圆括号()具有最高的优先级，其次才是逻辑运算符
 
 |      运算符       | 优先级 |
 | :---------------: | :----: |
@@ -148,30 +150,32 @@
 
 ### 逻辑运算和比特运算
 
-如果一个变量的值为真或为假,则此变量称为布尔变量(Boolean variable)
+如果一个变量的值为真或为假，则此变量称为布尔变量(Boolean variable)
 
-计算机的比特运算(bit operations,或称为位运算)
+计算机的比特运算(bit operations，或称为位运算)
 
 ## 命题等价式
 
-
-用真值相同的语句替换另一条语句是数学证明中常用的(认真体会),因此,从给定符合命题生成相同真值命题的方法广泛用于数学构造.
+用真值相同的语句替换另一条语句是数学证明中常用的(认真体会)，因此，从给定符合命题生成相同真值命题的方法广泛用于数学构造。
 
 #### 永真,矛盾,可能
 
-定义:一个真值永远是真的复合命题(无论其中出现的命题变量的值是什么),称为永真式(tautology),也称为重言式.一个真值永远为假的复合命题称为矛盾式(contradiction).既不是永真式又不是矛盾式的复合命题称为可能式(contingency).
+定义：一个真值永远是真的复合命题(无论其中出现的命题变量的值是什么)，称为永真式(tautology)，也称为重言式。
+一个真值永远为假的复合命题称为矛盾式(contradiction)。
+既不是永真式又不是矛盾式的复合命题称为可能式(contingency)。
 
-> 我们其实可以只用一个变量便可以构造出永真式和矛盾式,比如说 $p\wedge\neg p$ 便是一个矛盾式,而 $p\vee \neg p$ 便是一个永真式
+> 我们其实可以只用一个变量便可以构造出永真式和矛盾式，比如说 $p\wedge\neg p$ 便是一个矛盾式，而 $p\vee \neg p$ 便是一个永真式。
 
 ### 逻辑等价式
 
-在所有可能的情况下都具有相同真值的两个复合命题称为逻辑等价的.我们也可以如下定义:
+在所有可能的情况下都具有相同真值的两个复合命题称为逻辑等价的。
+们也可以如下定义:
 
-如果 $p\leftrightarrow q$ 是永真式,则复合命题p和q是逻辑等价(logically equivalent)的.用记号 $p\equiv q$ 来表示(也可以用 $p\Leftrightarrow q$ 来表示)
+如果 $p\leftrightarrow q$ 是永真式，则复合命题p和q是逻辑等价(logically equivalent)的。用记号 $p\equiv q$ 来表示(也可以用 $p\Leftrightarrow q$ 来表示)
 
-> 需要注意的是,符号" $\equiv$ "并不是一个逻辑联结词， $p\equiv q$ 也不是一个复合命题.
+> 需要注意的是，符号" $\equiv$ "并不是一个逻辑联结词， $p\equiv q$ 也不是一个复合命题.
 
-我们可以用真值表去证明逻辑等价式,但是一旦变量数量变多真值表就会难以绘制,所以我们给出一些基本的逻辑等价式:
+我们可以用真值表去证明逻辑等价式，但是一旦变量数量变多真值表就会难以绘制，所以我们给出一些基本的逻辑等价式：
 
 - $p\wedge T\equiv p$\
   $p\vee F\equiv p$(恒等律Identity laws)
@@ -243,7 +247,7 @@
 
 ### 德摩根律的应用
 
-实际上,德摩根律可以扩展为n个命题的形式
+实际上，德摩根律可以扩展为n个命题的形式
 
 $\neg(p_1\vee p_2\vee...\vee p_n)\equiv(\neg p_1\wedge\neg p_2\wedge...\wedge\neg p_n)$
 
@@ -257,31 +261,31 @@ $\neg\bigwedge^n_{j=1}p_j\equiv\bigvee^n_{j=1}\neg p_j$
 
 ### 构造新的逻辑等价式
 
-其实就是灵活使用各种逻辑等价式来进行化简之类的,不过多赘述
+其实就是灵活使用各种逻辑等价式来进行化简之类的，不过多赘述
 
 ### 补充
 
-定义:命题变元及其否定统称为文字,一些文字的合取称为基本合取式或短语,一些文字的析取称为基本析取式或句子.
+定义：命题变元及其否定统称为文字，一些文字的合取称为基本合取式或短语，一些文字的析取称为基本析取式或句子。
 
-(1)disjunctive normal form: 假设 $A_i$ (i=1,2,...,n)为基本合取式,则 $A=A_1\vee A_2\vee...\vee A_n$ 称为析取范式
+(1)disjunctive normal form: 假设 $A_i$ (i=1,2,...,n)为基本合取式，则 $A=A_1\vee A_2\vee...\vee A_n$ 称为析取范式
 
-(2)conjunctive normal form:假设 $A_i$ (i=1,2,...,n)为基本析取式,则 $A=A_1\wedge A_2\wedge...\wedge A_n$ 称为合取范式
+(2)conjunctive normal form：假设 $A_i$ (i=1,2,...,n)为基本析取式，则 $A=A_1\wedge A_2\wedge...\wedge A_n$ 称为合取范式
 
 任何一个命题公式都存在与它等价的析取范式和合取范式
 
-极大项:包含全部数目的命题变元的析取表达式
-        极小项:包含全部数目的命题变元的合取表达式
+极大项：包含全部数目的命题变元的析取表达式
+极小项：包含全部数目的命题变元的合取表达式
 
-主析取范式:仅由最小项的析取构成的等值式
-	主合取范式:仅由最大项的合取构成的等值式
+主析取范式：仅由最小项的析取构成的等值式
+主合取范式：仅由最大项的合取构成的等值式
 
 例:求 $(p\wedge q)\vee r$ 的主析取范式和主合取范式
 
-主析取范式:
+主析取范式：
 
 $(p\wedge q)\vee r\equiv(p\wedge q\wedge r)\vee(p\wedge q\wedge \neg r)\vee(\neg p\wedge q\wedge r)\vee(p\wedge \neg q\wedge r)\vee(\neg p\wedge \neg q\wedge r)$ 
 
-主合取范式:
+主合取范式：
 
  $(p\wedge q)\vee r\equiv(r\vee p)\wedge(r\vee q)\equiv(r\vee p\vee \neg q)\wedge(r\vee p\vee q)\wedge(r\vee\neg p\vee q)$ 
 
@@ -289,10 +293,113 @@ $(p\wedge q)\vee r\equiv(p\wedge q\wedge r)\vee(p\wedge q\wedge \neg r)\vee(\neg
 
 ### 可满足性
 
-一个复合命题称为是可满足的,如果存在一个对其变量的真值赋值使其为真(也就是说,当他是一个永真式或者说是可满足式的时候).当不存在这样的赋值时,即当复合命题对所有变量的真值赋值都是假的,则复合命题是不可满足的.
+一个复合命题称为是可满足的，如果存在一个对其变量的真值赋值使其为真(也就是说,当他是一个永真式或者说是可满足式的时候)。
+当不存在这样的赋值时，即当复合命题对所有变量的真值赋值都是假的，则复合命题是不可满足的。
 
 一个复合命题是不可满足的当且仅当它的否定是永真式
 
-当我们找到一个特定的使得复合命题为真的真值赋值时,就证明了它是可满足的.这样的赋值称为这个特定的可满足性的问题的一个解.
+当我们找到一个特定的使得复合命题为真的真值赋值时，就证明了它是可满足的。这样的赋值称为这个特定的可满足性的问题的一个解。
 
 
+## 谓词和量词
+
+### 谓词
+
+一般地，涉及n个变量 $x_1,x_2,...,x_n$ 的语句可以表示成为P( $x_1,x_2,...,x_n$ )。
+形式为P( $x_1,x_2,...,x_n$ )的语句是命题函数P在n元组( $x_1,x_2,...,x_n$ )的值，P也称为n元谓词或者n位谓词。
+
+### 量词
+
+量化是一种方式，一种从命题函数生成一个命题的方式。量化表示在何种程度上谓词对于一定范围内的个体成立.
+
+> 处理谓词和量词的逻辑领域成为谓词演算
+
+变量的取定区域称为变量的论域(domain of discourse)，或全体域(universe of discourse)，时常简称为域。
+值得注意的是，当我们改变命题的论域时，命题的量化的意义也会随着而改变，在我们使用量词时必须指定论域，否则语句的量化就是无意义的
+
+定义1：P(x)的全称量化是语句“P(x)对x在其论域的所有值为真”，符号 $\forall xP(x)$ 表示P(x)的全称量化。
+符号 $\forall$ 称为全称量词(universial quantifiers).
+
+> 注意，如果论域为空，那么 $\forall xP(x)$ 对任何命题函数P(x)都为真,因为论域中不存在x使P(x)为假
+
+定义2：P(x)的存在量化是命题"论域中存在一个个体x满足P(x)”，我们用 $\exists xP(x)$ 来表示，其中 $\exists$ 称为存在量词(existential quantifiers)
+
+> 注意，如果论域为空，那么 $\exists xP(x)$ 对任何命题函数P(x)为假，因为没有一个个体x使P(x)为真。
+
+> 其实我们还会有唯一性量词，用符号 $\exists !$ 或者是 $\exists _1$ 
+
+### 有限域上的量词
+
+当论域中的元素为有限个时，比如 $x_1,x_2,...,x_n$ ，则全称量词命题 $\forall xP(x)\equiv P(x_1)\wedge P(x_2)\wedge...\wedge P(x_n)$ 
+
+> 要证明上述结论并不困难，我们只需要证当等式左侧真值为1时等式右侧的真值也为1，当等式右侧真值为1时等式左侧真值也为1。
+
+同样地，存在量词命题 $\exists xP(x)\equiv P(x_1)\vee P(x_2)\vee...\vee P(x_n)$ 
+
+> 证明这个与证明全称量词的并不相同，这里我们证明当等式左侧真值为0时等式右侧真值也为0，当等式右侧真值为0时等式左侧真值也为0。
+
+### 受限域的量词
+
+在我们限定一个量词的论域时，有时会把变量必须满足的条件直接放在量词后面，比如说 $\forall x<0(x^2>0)$ , $\exists z>0(z^2=2)$ 等等。
+
+注意，受限的全称量化和一个条件语句的全称量化等价。$\forall x<0(x^2>0)$ 等价于 $\forall x(x<0\rightarrow x^2>0)$ 。
+另一方面，受限的存在量化和一个合取式的存在量化等价， $\exists z>0(z^2=2)$ 等价于 $\exists z(z>0\wedge z^2=2)$ 。
+
+> 实际上我们在后来学习将自然语言翻译成命题语言的过程中，也会了解到全称量词一般会和条件语句联系在一起，而存在量词会和合取表达式联系在一起。
+
+### 量词的优先级
+
+量词 $\forall$ 和 $\exists$ 比命题演算中的所有逻辑运算符都具有更高的优先级
+
+### 变量绑定
+
+当量词作用于变量x时，我们说此变量的这次出现为约束的。
+一个变量的出现被称为是自由的，如果没有被量词约束或者设置为某一特定值。
+
+而命题函数中的所有变量必须是约束的或者被设置为等于某一个特定值的，才能把他转变为一个命题。
+这可以通过采用一组全程量词，存在量词，赋值来实现。
+
+逻辑表达式中一个量词作用到的部分称为量词的作用域，一个变量是自由的当且仅当它在公式中所有限定该变量的量词作用域之外.
+
+> 值得注意的是，我们经常会用同一个字母表示不同量词约束的变量，只要其作用域不重叠的。
+
+### 涉及量词的逻辑等价式
+
+$$\begin{align\*}
+\forall x(A(x)\wedge B(x))\Leftrightarrow \forall xA(x)\wedge\forall xB(x)\\
+\exists x(A(x)\vee B(x))\Leftrightarrow \exists xA(x)\vee\exists xB(x)\\
+\forall xA(x)\vee\forall xB(x)\Rightarrow\forall x(A(x)\vee B(x))\\
+\exists x(A(x)\wedge B(x))\Rightarrow\exists xA(x)\wedge\exists xB(x)\\
+\end{align\*}$$
+
+> 值得注意的是最后两行是" $\Rightarrow$ "，也就是说，全称量词与合取搭配，存在量词与析取搭配。
+> 要证明上述结论也非常容易，将论域分为互不相交的两部分，一部分内的x使A(x)为真而B(x)为假，而另一部分使A(x)为假而B(x)为真，便可证明后两行公式左右两侧的真值并不为真。
+
+$$\begin{align\*}
+x\; is\; not\; occuring\; in\; P\; and\; B.\\
+\forall xA(x)\vee P\Leftrightarrow \forall x(A(x)\vee P)\\
+\forall xA(x)\wedge P\Leftrightarrow \forall x(A(x)\wedge P)\\
+\exists xA(x)\vee P\Leftrightarrow \exists x(A(x)\vee P)\\
+\exists xA(x)\wedge P\Leftrightarrow\exists x(A(x)\wedge P)\\
+\forall x(B\rightarrow A(x))\Leftrightarrow B\rightarrow\forall xA(x)\\
+\exists x(B\rightarrow A(x))\Leftrightarrow B\rightarrow \exists xA(x)\\
+\forall x(A(x)\rightarrow B)\Leftrightarrow \exists xA(x)\rightarrow B\\
+\exists x(A(x)\rightarrow B)\Leftrightarrow\forall xA(x)\rightarrow B\\
+\end{align\*}$$
+
+> 也就是说，当出现量词与合取或者析取时，括号的作用其实并不大。
+> 当出现量词与条件语句时，则要注意命题函数的位置。如果命题函数位于条件语句的结论处，那么括号的作用其实也不大，但如果命题函数位于条件语句的假设处，那么去掉括号后量词就会发生变化。
+
+### 量化表达式的否定
+
+$$\begin{align\*}
+\neg\exists xA(x)\equiv\forall x\neg A(x)\\
+\neg\forall xA(x)\equiv\exists x\neg A(x)\\
+\end{align\*}$$
+
+> 量词的否定规则被称为量词的德摩根律，其实我们不难发现，当论域中的元素为有限个时，量词的德摩根律与我们之前提到过的德摩根律完全相同
+
+### 语句到逻辑表达式的翻译
+
+判断是全称量词命题还是存在量词命题其实并不困难，困难的事情其实在于如何使用命题函数来表述。
+实际上，当我们在表述全称量词命题时通常会使用条件语句，表述存在量词命题时通常会使用合取表达式。
