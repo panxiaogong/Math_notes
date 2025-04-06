@@ -499,3 +499,99 @@ $$\begin{align\*}
 \Leftrightarrow \exists x\forall y\neg(xy=1)\\
 \Leftrightarrow \exists x\forall y(xy\neq 1)\\
 \end{align\*}$$
+
+## 推理规则
+
+### 引言
+
+数学中的证明是建立数学命题真实性的有效论证。
+
+所谓的论证，是指一连串的命题并以结论为最后的命题。
+
+所谓有效性，是指结论或论证的最后一个命题必须根据论证过程前面的命题或前提的真实性推出
+
+### 命题逻辑的有效逻辑
+
+无论什么时候，只要所有前提为真，那么结论也必须为真，我们就说语句的这种论证形式是有效的。实际上，我们为了分析一个论证，我们用命题变量代替命题，这将一个论证变为一个论证形式。
+
+> 乍一听非常难理解，所谓的论证变成一个论证形式，其实就是将这种论证思路做成类似于公示的样子，使得用起来更加方便，比如我们在高中里用过的二级结论一样，方便而且快。
+
+定义：命题逻辑中的一个论证是一连串命题的组合。除了论证中最后一个命题外的命题都叫做前提，最后那个命题叫作结论。如果所有前提为真蕴含着结论为真，那么一个论证是有效的。
+
+命题逻辑中的论证形式是一连串涉及命题变量的复合命题。无论用什么特定命题替换其中的命题变量，如果前提均真时结论为真，则称该论证形式是有效的。
+
+> 当 $(p_1\wedge p_2\wedge...\wedge p_n)\rightarrow q$ 是永真式时，带有前提 $p_i(i=1,2,...,n)$ 以及结论q的论证形式是有效的。
+
+#### 1.6.3命题逻辑的推理规则
+
+一共有九个，如下：
+
+| 永真式                                                       | 名称       | 英文                   |
+| ------------------------------------------------------------ | ---------- | ---------------------- |
+| $p\rightarrow (p\vee q)$                                     | 附加律     | Addition               |
+| $(p\wedge q)\rightarrow p$                                   | 化简律     | Simplification         |
+| $((p)\wedge(q))\rightarrow p\wedge q$                        | 合取律     | Conjunction            |
+| $(p\wedge(p\rightarrow q))\rightarrow q$                     | 假言推理   | Modus ponens           |
+| $(\neg q\wedge(p\rightarrow q))\rightarrow\neg p$            | 取拒式     | Modus Tollens          |
+| $((p\rightarrow q)\wedge(q\rightarrow r))\rightarrow(p\rightarrow r)$ | 假言三段论 | Hypothetical syllogism |
+| $((p\vee q)\wedge\neg q)\rightarrow p$                       | 析取三段论 | Disjunctive syllogism  |
+| $(p\rightarrow r)\wedge(q\rightarrow r)\wedge(p\vee q)\rightarrow r$ | 构造性两难 | Constructive dilemma   |
+| $((p\vee q)\wedge(\neg p\vee r))\rightarrow(q\vee r)$        | 消解律     | Resolution             |
+
+补充：
+
+1.如果有 $p\rightarrow q$ 这样的结论形式，我们就能把原问题转换成下面这个式子：
+
+$$\begin{align\*}
+p_1\wedge p_2\wedge...\wedge p_n\wedge p\rightarrow q
+\end{align\*}$$
+
+所以我们实际上可以把结论中p来作为前提进行推理，如果能推出q，便能证明原来的结论 $p\rightarrow q$ 
+
+2.在有些问题上，我们还可以使用归谬法：
+
+假设结论为假，推出前提的否定为真，与已知矛盾。
+
+3.实际上我们还可以通过构造消解律来论证
+
+### 消解律
+
+$$\begin{align\*}
+((p\vee q)\wedge(\neg p\vee r))\rightarrow (q\vee r)
+\end{align\*}$$
+
+消解规则最后的析取式 $q\vee r$ 称为消解式，当令r=F时，就能得到析取三段论。
+
+要使用消解律作为仅有的推理规则来构造命题逻辑中的证明，假设和结论必须表示为子句，这里子句是指变量或其否定的一个析取式。我们将命题逻辑中非子句的语句用一个或多个等价的子句语句来替换。比如 $p\vee (q\wedge r)$ ,就可以使用分配律来获得 $(p\vee q)\wedge (p\vee r)$ ，从而获得 $(p\vee q)$ 和$(p\vee r)$ ，也可以使用 $\neg p\vee q$ 来代替条件语句 $p\rightarrow q$ 等等。
+
+### 谬误
+
+
+
+1.肯定结论的谬误
+
+原因在于 $((p\rightarrow q)\wedge q)\rightarrow p$ 不是永真式。
+
+2.否定假设的谬误
+
+原因在于 $((p\rightarrow q)\wedge \neg p)\rightarrow \neg q$ 不是永真式。
+
+### 量化命题的推理规则
+
+以下这些推理规则广泛地应用在数学论证中，但通常不会显式提及
+
+1.全称实例：是从给定前提 $\forall xP(x)$ 得出 $P(c)$ 为真的推理规则
+
+2.全称引入：对论域里所有元素c都有P(c)为真来推出 $\forall xP(x)$ 
+
+3.存在实例：从 $\exists xP(x)$ 推出存在一个元素c使得P(c)为真
+
+> 但是，在存在实例中，我们一般并不知道c是什么，但我们只知道它存在，因为存在，所以给它一个名称c从而继续论证。
+
+4.存在引入：从已知有一个特定的c使得P(c)为真得出 $\exists xP(x)$ 为真
+
+### 命题和量化命题推理规则的组合使用
+
+1.全称假言推理
+
+2.全程取拒式
