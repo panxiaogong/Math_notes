@@ -289,8 +289,47 @@ $(p\wedge q)\vee r\equiv(p\wedge q\wedge r)\vee(p\wedge q\wedge \neg r)\vee(\neg
 
  $(p\wedge q)\vee r\equiv(r\vee p)\wedge(r\vee q)\equiv(r\vee p\vee \neg q)\wedge(r\vee p\vee q)\wedge(r\vee\neg p\vee q)$ 
 
-> 我们还可以通过列真值表来获得主析取范式和主合取范式。
 
+我们其实可以根据真值表来书写主析取范式和主合取范式
+
+| $p$  | $q$  | $r$  | $(p\wedge q)\vee(\neg p\wedge r)$ |
+| ---- | ---- | ---- | :-------------------------------: |
+| T    | T    | T    |                 T                 |
+| T    | T    | F    |                 T                 |
+| T    | F    | T    |                 F                 |
+| T    | F    | F    |                 F                 |
+| F    | T    | T    |                 T                 |
+| F    | T    | F    |                 F                 |
+| F    | F    | T    |                 T                 |
+| F    | F    | F    |                 F                 |
+
+如果要书写主析取范式，那么需要关注使得复合命题真值为真的真值组合，这些真值组合对应主析取范式中的极小项，并且使得该项在对应的真值组合下取T。
+
+比如：在真值表中，使得复合命题 $(p\wedge q)\vee(\neg p\wedge r)$ 为真的真值组合有TTT，TTF，FTT，FFT，对应的极小项分别是 $(p\wedge q\wedge r)$ , $(p\wedge q\wedge\neg r)$ , $(\neg p\wedge q\wedge r)$ , $(\neg p\wedge\neg q\wedge r)$ ，这样我们就写出了如下的主析取范式。
+
+$$\begin{align\*}
+(p\wedge q)\vee(\neg p\wedge r)\equiv (p\wedge q\wedge r)\vee(p\wedge q\wedge\neg r)\vee(\neg p\wedge q\wedge r)\vee(\neg p\wedge\neg q\wedge r)
+\end{align\*}$$
+
+如果要书写主合取范式，那么需要关注使得复合命题真值为假的真值组合，这些真值组合对应主合取范式中的极大项，并且使得该项在对应的真值组合下取F。
+
+比如：在真值表中，使得复合命题 $(p\wedge q)\vee(\neg p\wedge r)$ 为真的真值组合有TFT，TFF，FTF，FFF，这里拿TFT这一真值组合来举例，它所对应的极大项是 $\neg p\vee q\vee\neg r$ （很别扭，对吧？），其他的真值组合同理，我们就能写出如下的主合取范式。
+
+$$\begin{align\*}
+(p\wedge q)\vee(\neg p\wedge r)\equiv (\neg p\vee q\vee\neg r)\wedge(\neg p\vee q\vee r)\wedge(p\vee\neg q\vee r)\wedge(p\vee q\vee r)
+\end{align\*}$$
+
+
+思考：1.含有t个命题变元的真值表除了表头之外最多有多少行？
+
+答案是显然的，t个命题变元，每个都有0，1两种取值，所以一共有 $2^t$ 个。
+
+2.t个命题变元最多能形成多少个不等价的复合命题？
+
+这个问题并不好思考，因为哪怕是只有两个命题变元，其不断地组合能形成无限个复合命题，再判断其等价与否更是难办。
+我们不妨思考含有t个命题变元的真值表，这个表的最后一列是复合命题的真值，这时候我们大概会意识到，我们其实没有必要知到复合命题的形式，我们其实只需要知道复合命题的真值就可以了（也就是真值表的最后一列），结合上一道思考题，一共有 $2^t$ 行，复合命题在每行都有0，1两个选择，那就一共有 $2^{2^t}$ 个不等价的复合命题。
+
+但是这时候我们就不禁要问了，对于任意一种选择，我们都能写出对应的复合命题的形式吗？其实是能的，因为我们可以根据真值表来写出主合取范式或者主析取范式，所以对于任意一种选择，我们都能够写出来。
 ### 可满足性
 
 一个复合命题称为是可满足的，如果存在一个对其变量的真值赋值使其为真(也就是说,当他是一个永真式或者说是可满足式的时候)。
@@ -499,3 +538,180 @@ $$\begin{align\*}
 \Leftrightarrow \exists x\forall y\neg(xy=1)\\
 \Leftrightarrow \exists x\forall y(xy\neq 1)\\
 \end{align\*}$$
+
+## 推理规则
+
+### 引言
+
+数学中的证明是建立数学命题真实性的有效论证。
+
+所谓的论证，是指一连串的命题并以结论为最后的命题。
+
+所谓有效性，是指结论或论证的最后一个命题必须根据论证过程前面的命题或前提的真实性推出
+
+### 命题逻辑的有效逻辑
+
+无论什么时候，只要所有前提为真，那么结论也必须为真，我们就说语句的这种论证形式是有效的。实际上，我们为了分析一个论证，我们用命题变量代替命题，这将一个论证变为一个论证形式。
+
+> 乍一听非常难理解，所谓的论证变成一个论证形式，其实就是将这种论证思路做成类似于公示的样子，使得用起来更加方便，比如我们在高中里用过的二级结论一样，方便而且快。
+
+定义：命题逻辑中的一个论证是一连串命题的组合。除了论证中最后一个命题外的命题都叫做前提，最后那个命题叫作结论。如果所有前提为真蕴含着结论为真，那么一个论证是有效的。
+
+命题逻辑中的论证形式是一连串涉及命题变量的复合命题。无论用什么特定命题替换其中的命题变量，如果前提均真时结论为真，则称该论证形式是有效的。
+
+> 当 $(p_1\wedge p_2\wedge...\wedge p_n)\rightarrow q$ 是永真式时，带有前提 $p_i(i=1,2,...,n)$ 以及结论q的论证形式是有效的。
+
+### 命题逻辑的推理规则
+
+一共有九个，如下：
+
+| 永真式                                                       | 名称       | 英文                   |
+| ------------------------------------------------------------ | ---------- | ---------------------- |
+| $p\rightarrow (p\vee q)$                                     | 附加律     | Addition               |
+| $(p\wedge q)\rightarrow p$                                   | 化简律     | Simplification         |
+| $((p)\wedge(q))\rightarrow p\wedge q$                        | 合取律     | Conjunction            |
+| $(p\wedge(p\rightarrow q))\rightarrow q$                     | 假言推理   | Modus ponens           |
+| $(\neg q\wedge(p\rightarrow q))\rightarrow\neg p$            | 取拒式     | Modus Tollens          |
+| $((p\rightarrow q)\wedge(q\rightarrow r))\rightarrow(p\rightarrow r)$ | 假言三段论 | Hypothetical syllogism |
+| $((p\vee q)\wedge\neg q)\rightarrow p$                       | 析取三段论 | Disjunctive syllogism  |
+| $(p\rightarrow r)\wedge(q\rightarrow r)\wedge(p\vee q)\rightarrow r$ | 构造性两难 | Constructive dilemma   |
+| $((p\vee q)\wedge(\neg p\vee r))\rightarrow(q\vee r)$        | 消解律     | Resolution             |
+
+补充：
+
+1.如果有 $p\rightarrow q$ 这样的结论形式，我们就能把原问题转换成下面这个式子：
+
+$$\begin{align\*}
+p_1\wedge p_2\wedge...\wedge p_n\wedge p\rightarrow q
+\end{align\*}$$
+
+所以我们实际上可以把结论中p来作为前提进行推理，如果能推出q，便能证明原来的结论 $p\rightarrow q$ 
+
+2.在有些问题上，我们还可以使用归谬法：
+
+假设结论为假，推出前提的否定为真，与已知矛盾。
+
+3.实际上我们还可以通过构造消解律来论证
+
+### 消解律
+
+$$\begin{align\*}
+((p\vee q)\wedge(\neg p\vee r))\rightarrow (q\vee r)
+\end{align\*}$$
+
+消解规则最后的析取式 $q\vee r$ 称为消解式，当令r=F时，就能得到析取三段论。
+
+要使用消解律作为仅有的推理规则来构造命题逻辑中的证明，假设和结论必须表示为子句，这里子句是指变量或其否定的一个析取式。我们将命题逻辑中非子句的语句用一个或多个等价的子句语句来替换。比如 $p\vee (q\wedge r)$ ,就可以使用分配律来获得 $(p\vee q)\wedge (p\vee r)$ ，从而获得 $(p\vee q)$ 和$(p\vee r)$ ，也可以使用 $\neg p\vee q$ 来代替条件语句 $p\rightarrow q$ 等等。
+
+### 谬误
+
+
+
+1.肯定结论的谬误
+
+原因在于 $((p\rightarrow q)\wedge q)\rightarrow p$ 不是永真式。
+
+2.否定假设的谬误
+
+原因在于 $((p\rightarrow q)\wedge \neg p)\rightarrow \neg q$ 不是永真式。
+
+### 量化命题的推理规则
+
+以下这些推理规则广泛地应用在数学论证中，但通常不会显式提及
+
+1.全称实例：是从给定前提 $\forall xP(x)$ 得出 $P(c)$ 为真的推理规则
+
+2.全称引入：对论域里所有元素c都有P(c)为真来推出 $\forall xP(x)$ 
+
+3.存在实例：从 $\exists xP(x)$ 推出存在一个元素c使得P(c)为真
+
+> 但是，在存在实例中，我们一般并不知道c是什么，但我们只知道它存在，因为存在，所以给它一个名称c从而继续论证。
+
+4.存在引入：从已知有一个特定的c使得P(c)为真得出 $\exists xP(x)$ 为真
+
+## 证明导论
+
+### 引言
+
+一个证明是建立数学语句真实性的有效论证，换句话说，有效的论证才是证明
+
+> 之前我们所给出的证明皆为形式化证明(提供了所有的步骤，并且给出了所有用到的规则)，但之后我们将转向非形式化证明，这不会显式地列出所用到的假设公理和推理规则，这也是计算机所乐于使用的。
+
+### 一些专用术语
+
+定理(theorem):一个能够被证明为真的语句。也被称为事实(fact)或结论(result)
+
+> 不太重要的定理有时会被称为命题。
+
+公理(axiom):在数学框架下假定为真的语句。
+
+引理(lemma):一个重要性略低但有助于证明其他结论的定理。
+
+推论(corollary):从一个已经被证明的定理直接建立起来的一个定理。
+
+猜想(conjucture):被提出认为是真的命题。
+
+
+### 证明定理的方法
+
+1.直接证明
+
+2.间接证明：证明逆否命题。
+
+3.空证明(vacuous proof):证明条件语句的前提为假
+
+4.平凡证明(Trivial proof)：直接证明结论真值为1
+
+5.归谬证明法(Proof by contradiction)：假设结论为假，推出矛盾
+
+6.Proof by cases(分情况证明)
+
+$$\begin{align\*}
+(p_1\vee p_2\vee...\vee p_n)\rightarrow q\\
+其实就是证明p_i\rightarrow q(i=1,2,3...,n)\\
+\end{align\*}$$
+
+7.存在性证明(existence proof)
+
+8.Disproof by Counterexample(找出反例)
+
+9.Nonexistence Proofs
+
+### 直接证明法
+
+对于条件语句 $p\rightarrow q$ 来使用直接证明：
+
+第一步：假设p为真
+
+第二步：使用推理规则构造
+
+第三步：推出q为真
+
+直接证明就是从假设直接导向结论。
+
+### 反证法
+
+反证法(proof by contraposition):证明原命题的逆否命题成立，或者说利用逆否命题的结论去推导出与原题设不符的矛盾。
+
+> 实际上我们在高中使用的反证法并不是真正的反证法，而是归谬证明法(proof by contradiction)
+
+空证明：证明命题的假设为假
+
+平凡证明：直接证明命题的结论为真(换句话说，就是不使用前提)
+
+### 归谬证明法
+
+使用归谬证明法的经典例题就是“证明素数有无限个”
+
+
+### 存在性证明
+
+存在性证明就是找到一个特例，然后进行存在引入。
+
+> 但是，这个特例的寻找往往极其考察数学直觉而无特别好的方法。
+
+例：证明：对于任意正整数n，都有n个连续的正整数且这些正整数皆为合数。
+
+
+
+证明：存在无理数x，存在无理数y，证明x的y次方有理。
