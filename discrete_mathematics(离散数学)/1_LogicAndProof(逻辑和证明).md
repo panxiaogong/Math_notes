@@ -289,8 +289,47 @@ $(p\wedge q)\vee r\equiv(p\wedge q\wedge r)\vee(p\wedge q\wedge \neg r)\vee(\neg
 
  $(p\wedge q)\vee r\equiv(r\vee p)\wedge(r\vee q)\equiv(r\vee p\vee \neg q)\wedge(r\vee p\vee q)\wedge(r\vee\neg p\vee q)$ 
 
-> 我们还可以通过列真值表来获得主析取范式和主合取范式。
 
+我们其实可以根据真值表来书写主析取范式和主合取范式
+
+| $p$  | $q$  | $r$  | $(p\wedge q)\vee(\neg p\wedge r)$ |
+| ---- | ---- | ---- | :-------------------------------: |
+| T    | T    | T    |                 T                 |
+| T    | T    | F    |                 T                 |
+| T    | F    | T    |                 F                 |
+| T    | F    | F    |                 F                 |
+| F    | T    | T    |                 T                 |
+| F    | T    | F    |                 F                 |
+| F    | F    | T    |                 T                 |
+| F    | F    | F    |                 F                 |
+
+如果要书写主析取范式，那么需要关注使得复合命题真值为真的真值组合，这些真值组合对应主析取范式中的极小项，并且使得该项在对应的真值组合下取T。
+
+比如：在真值表中，使得复合命题 $(p\wedge q)\vee(\neg p\wedge r)$ 为真的真值组合有TTT，TTF，FTT，FFT，对应的极小项分别是 $(p\wedge q\wedge r)$ , $(p\wedge q\wedge\neg r)$ , $(\neg p\wedge q\wedge r)$ , $(\neg p\wedge\neg q\wedge r)$ ，这样我们就写出了如下的主析取范式。
+
+$$\begin{align\*}
+(p\wedge q)\vee(\neg p\wedge r)\equiv (p\wedge q\wedge r)\vee(p\wedge q\wedge\neg r)\vee(\neg p\wedge q\wedge r)\vee(\neg p\wedge\neg q\wedge r)
+\end{align\*}$$
+
+如果要书写主合取范式，那么需要关注使得复合命题真值为假的真值组合，这些真值组合对应主合取范式中的极大项，并且使得该项在对应的真值组合下取F。
+
+比如：在真值表中，使得复合命题 $(p\wedge q)\vee(\neg p\wedge r)$ 为真的真值组合有TFT，TFF，FTF，FFF，这里拿TFT这一真值组合来举例，它所对应的极大项是 $\neg p\vee q\vee\neg r$ （很别扭，对吧？），其他的真值组合同理，我们就能写出如下的主合取范式。
+
+$$\begin{align\*}
+(p\wedge q)\vee(\neg p\wedge r)\equiv (\neg p\vee q\vee\neg r)\wedge(\neg p\vee q\vee r)\wedge(p\vee\neg q\vee r)\wedge(p\vee q\vee r)
+\end{align\*}$$
+
+
+思考：1.含有t个命题变元的真值表除了表头之外最多有多少行？
+
+答案是显然的，t个命题变元，每个都有0，1两种取值，所以一共有 $2^t$ 个。
+
+2.t个命题变元最多能形成多少个不等价的复合命题？
+
+这个问题并不好思考，因为哪怕是只有两个命题变元，其不断地组合能形成无限个复合命题，再判断其等价与否更是难办。
+我们不妨思考含有t个命题变元的真值表，这个表的最后一列是复合命题的真值，这时候我们大概会意识到，我们其实没有必要知到复合命题的形式，我们其实只需要知道复合命题的真值就可以了（也就是真值表的最后一列），结合上一道思考题，一共有 $2^t$ 行，复合命题在每行都有0，1两个选择，那就一共有 $2^{2^t}$ 个不等价的复合命题。
+
+但是这时候我们就不禁要问了，对于任意一种选择，我们都能写出对应的复合命题的形式吗？其实是能的，因为我们可以根据真值表来写出主合取范式或者主析取范式，所以对于任意一种选择，我们都能够写出来。
 ### 可满足性
 
 一个复合命题称为是可满足的，如果存在一个对其变量的真值赋值使其为真(也就是说,当他是一个永真式或者说是可满足式的时候)。
