@@ -404,8 +404,8 @@ g是一个从S到N的满射函数,故|S|=|N|\\
 定理：在0和1之间的实数集合是不可数的。
 
 $$\begin{align\*}
-A=\{x|x\in(0,1)\wedge x\in R\}\\
-B=\{\frac{1}{n+1}|n\in N\}\\
+A=\\{x|x\in(0,1)\wedge x\in R\\}\\
+B=\\{\frac{1}{n+1}|n\in N\\}\\
 显然|N|=|B|，B\subseteq A\\
 所以|N|\leqslant|A|\\
 假设集合A是无限可数的，A=\{r_1,r_2,...,r_n,...\}\\
