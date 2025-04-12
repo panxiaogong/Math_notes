@@ -345,7 +345,7 @@ $$\begin{align\*}
 
 > 值得注意的是，下文中提到的 $\preccurlyeq$ 只是偏序关系的记号，而并不是小于等于的意思，但是我们可以念作小于（个人觉得这样只是为了方便而已），而记号 $\prec$ 表示 $a\preccurlyeq b$ 且 $a\neq b$ 。
 
-偏序集 $(S,\preccurlyeq)$ 中的元素a和b如果有 $a\preccurlyeq b$ 或者 $b\preccurlyeq a$ ，那么元素a和b叫做“可比的”，但当a和b是S的元素并且既没有 $a\preccurlyeq b$ 或者 $b\preccurlyeq a$ （也就是偏序关系R中没有序偶(a,b)或者序偶(a,b)），我们就称a和b是不可比的。
+偏序集 $(S,\preccurlyeq)$ 中的元素a和b如果有 $a\preccurlyeq b$ 或者 $b\preccurlyeq a$ ，那么元素a和b叫做“可比的”，但当a和b是S的元素并且既没有 $a\preccurlyeq b$ 或者 $b\preccurlyeq a$ （也就是偏序关系R中没有序偶(a,b)或者序偶(b,a)），我们就称a和b是不可比的。
 
 > 比如说，在偏序集(Z,|)中，3与9就是可比的，但是5和7是不可比的。
 
