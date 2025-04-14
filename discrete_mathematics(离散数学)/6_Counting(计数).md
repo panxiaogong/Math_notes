@@ -31,3 +31,31 @@ n!\approx\sqrt{2\pi n}\cdot(\frac{n}{e})^n(Stirling近似)
 \end{align\*}$$
 
 ### 组合
+
+相比于排列，组合更加的自然。对集合中的部分元素放在一块，就是组合。它是无顺序的，随意地从集合中选出来放在一起即可。比如说对于集合S={a,b,c}，在集合S中任意选取两个元素进行组合，就可以得到三种组合：a,b；b,c；c,a。
+
+对于n元素集中r个元素的有序安排称为**r组合**，记作**C(n,r)** 。
+
+$$\begin{align\*}
+n元素集合的r组合数等于\\
+C(n,r)=\frac{n!}{r!(n-r)!}
+\end{align\*}$$
+
+证明：我们考虑n元素集合的r排列，即P(n,r)，之后我们换一种思路去得到一个r排列：先从n元素集中选出r个元素，即C(n,r)，再对这r个元素进行排列，即P(r,r)，那么我们有：
+
+$$\begin{align\*}
+P(n,r)=C(n,r)C(r,r)\\
+C(n,r)=\frac{P(n,r)}{C(r,r)}=\frac{\frac{n!}{(n-r)!}}{r!}=\frac{n!}{r!(n-r)!}\\
+\end{align\*}$$
+
+- 由公式易得， $C(n,r)=C(n,n-r)$ ，这也不难理解，当你从n元素集合中选取了r个元素，剩下的n-r元素也就唯一确定了。
+
+补充：
+
+```math
+如果0\leq p\leq 1,q=1-p,n\rightarrow\infty,那么\\\\
+\begin{pmatrix}n\\pn\end{pmatrix}\approx\frac{1}{\sqrt{2\pi}}(p^pq^q)^{-n}(pqn)^{-\frac1 2}(Stirling近似)
+```
+
+
+## 二项式系数和恒等式
