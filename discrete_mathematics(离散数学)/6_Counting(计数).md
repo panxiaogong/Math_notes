@@ -243,7 +243,7 @@ $$\begin{align\*}
 
 显然，根据乘法原理，n个元素的集合允许重复的r排列个数是 $n^r$ 。
 
-#### 有重复的组合
+### 有重复的组合
 
 有重复的组合解释起来有些困难。比如说我现在有三种水果，分别是橘子，苹果和梨，现在要求是选择5个水果，比如说我拿三个橘子一个苹果和一个梨，或者干脆拿五个苹果了事。
 
@@ -267,7 +267,7 @@ $$\begin{align\*}
 
 但是，隔板法的应用远远超出我们的想像，不妨我们来单独讨论一下这一点。
 
-#### 隔板法的应用
+### 隔板法的应用
 
 **1.不定方程的非负整数解**
 
@@ -280,6 +280,73 @@ x_1+x_2+...+x_n=r(r\in N)
 目标是求出该方程非负整数解的个数。
 
 我们考虑r个小球，n-1个隔板，把隔板随便放，就得到了把r个小球放在n个格子里的方法，一个格子里最多有r个小球，最小有0个，那这不就是非负整数解吗？所以我们就得到了求上述方程非负整数解个数的方法：其实就是隔板法。个数为 $\binom{n+r-1}{r}$ 。
+
+**变式1：** 如果要求上述方程正整数解的个数呢？
+
+若 $x_i\geqslant1(1\leqslant i\leqslant n)$ ，那么 $x_i-1\geqslant0(1\leqslant i\leqslant n)$ ，所以我们换元处理，令   $y_i=x_i-1(1\leqslant i\leqslant n)$ ，一旦 $y_i$ 确定， $x_i$ 就可以被确定，这样原方程就变成了下面的方程：
+
+$$\begin{align\*}
+y_1+y_2+...+y_n=r-n
+\end{align\*}$$
+
+利用原模型得到的结论，就可以得出解的个数为 $\binom{r-1}{r-n}$ 。
+
+ **变式2：** 如果每个元素都有下限呢？
+
+若 $x_i\geqslant a_i(1\leqslant i\leqslant n)$ ，那么 $x_i-a_i\geqslant0(1\leqslant i\leqslant n)$ ，所以我们换元处理，令   $y_i=x_i-a_i(1\leqslant i\leqslant n)$ ，一旦 $y_i$ 确定， $x_i$ 就可以被确定。需要额外注意的是，此处的 $a_i$ 只要求是整数，而不要求是正整数，很容易理解。此时解的个数为：
+
+$$\begin{align\*}
+\binom{n+r-1-\sum_{i=1}^na_i}{n-1}
+\end{align\*}$$
+
+**变式3：** 如果每个元素都有上限呢？
+
+若 $x_i\leqslant a_i(1\leqslant i\leqslant n)$ ，那么 $a_i-x_i\geqslant0(1\leqslant i\leqslant n)$ ，所以我们换元处理，令   $y_i=a_i-x_i(1\leqslant i\leqslant n)$ ，一旦 $y_i$ 确定， $x_i$ 就可以被确定。原方程即可变为：
+
+$$\begin{align\*}
+y_1+y_2+...+y_n=\sum_{i=1}^na_i-r
+\end{align\*}$$
+
+可得解的个数为
+
+$$\begin{align\*}
+\binom{n+\sum_{i=1}^na_i-r-1}{n-1}
+\end{align\*}$$
+
+
+**变式4：** 如果这不是一个等式呢？
+
+求满足下列不等式的非负整数解的个数：
+
+$$\begin{align\*}
+x_1+x_2+...+x_n\leqslant r
+\end{align\*}$$
+
+当然，我们可以使用 $x_1+x_2+...+x_n= i(0\leqslant i\leqslant r)$ 的累加，但是，我们还可以做如下的操作：
+
+$$\begin{align\*}
+令x_{n+1}=r-x_1+x_2+...+x_n\geqslant 0\\
+\therefore x_1+x_2+...+x_n+x_{n+1}=r\\
+即求下面这个方程的非负整数解的个数
+\end{align\*}$$
+
+仍然套用原模型的结论，可以得 $\binom{n+r}{r}$ 。
+
+**2.一道例题**
+
+从 $\{1,2,...,n\}$ 中选取r个互不相邻的整数，有多少种取法？
+
+分析：先不管三七二十一，先把r个整数选出来，再将其调整为互不相邻即可。
+
+显然，我们有 $x_1\geqslant1$ , $x_2-x_1\geqslant 2$ , $x_3-x_2\geqslant 2$ ,..., $x_r-x_{r-1}\geqslant 2$ , $x_r\leqslant n$ 。我们令 $y_1=x_1-1$ , $y_2=x_2-x_1-2$ ,..., $y_r=x_r-x_{r-1}-2$ , $y_{r+1}=n-x_r$ 。我们会有：
+
+$$\begin{align\*}
+y_1,y_2,...,y_{r+1}都是非负整数，并且:\\
+y_1+y_2+...+y_{r+1}=n-1-2(r-1)=n-2r+1\\
+即求下面这个方程的非负整数解的个数
+\end{align\*}$$
+
+所以答案为 $\binom{n-r+1}{r}$ 。
 
 
 
