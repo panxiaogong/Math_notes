@@ -94,3 +94,80 @@ $$\begin{align\*}
 
 ### 组合恒等式
 
+#### 帕斯卡恒等式
+
+$$\begin{align\*}
+令n,k皆为正整数并且k\leqslant n,则有:\\
+\binom{n+1}{k}=\binom{n}{k-1}+\binom{n}{k}
+\end{align\*}$$
+
+证明：等式左边是从n+1个元素中选取k个，等式右边是先选取集合中的一个特定元素（不妨记为a），要么选择a并且再从剩下的n个中选择k-1个，要么不选择a并且再从剩下的n个中选择k个，也就是等式右边，这样就证明了等式成立。
+
+> 这只是帕斯卡恒等式的一个组合证明，实际上我们也可以使用代数推导，就是把它写成阶乘的形式再计算。
+
+由帕斯卡恒等式，我们可以得到下面的三角形：
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/8edf613d-077f-48ba-b48f-a71817476081" width="700" />
+
+> 这个三角形被称为帕斯卡三角，也叫杨辉三角。
+
+注意：
+
+- 帕斯卡恒等式在这个三角形上有很好的体现。
+- 二项式定理中的系数在这个三角形上也能被很好地体现。
+- 该三角形还可以用于证明其他的组合恒等式
+
+#### 范德蒙德恒等式
+
+$$\begin{align\*}
+设m,n,r是非负整数，其中r不超过m或n，则有\\
+\binom{n+m}{r}=\sum_{k=0}^r\binom{m}{r-k}\binom{n}{k}
+\end{align\*}$$
+
+证明：等式左边是从m+n个元素中选取r个元素，这等价于从m个元素中选取r-k个，再从n个元素中选取k个，k从0取到r，累加在一起，就是等式右边。
+
+- 特别地，我们取m=n，r=n，由 $\binom{n}{r-k}\binom{n}{k}$ ，可得 $\binom{2n}{n}=\sum_{k=0}^r\binom{n}{k}^2$ 
+
+范德蒙德行列式在帕斯卡三角上的反映：
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/9e6f9a7d-526a-46ae-a93c-f6d74d72f5e4" width="500" />
+
+$$\begin{align\*}
+\binom{9}{6}=\binom{8}{5}\binom{1}{1}+\binom{8}{6}\binom{1}{0}\\
+=\binom{7}{4}\binom{2}{2}+\binom{7}{5}\binom{2}{1}+\binom{7}{6}\binom{2}{0}\\
+=\binom{6}{3}\binom{3}{3}+\binom{6}{4}\binom{3}{2}+\binom{6}{5}\binom{3}{1}+\binom{6}{6}\binom{3}{0}=\cdot\cdot\cdot
+\end{align\*}$$
+
+#### 其他恒等式
+
+##### 
+
+$$\begin{align\*}
+设n和r是非负整数，r\leqslant n，那么
+\binom{n+1}{m+1}=\sum_{j=r}^n\binom{j}{r}
+\end{align\*}$$
+
+证明（说实在的，我并不明白这个证明思路到底是怎么想出来的）：我们考虑长度为n+1的比特串，等式左边是在这个比特串中选出r+1个位置来放1，而其余位置放0，这等价于下面这种计数方式：
+
+   考虑这个比特串中从左往右数的最后一个1的位置，由于前面已经出现过r个1了，故最后一个1的位置可能是r+1，r+2，...，n+1。当最后一个1出现在j+1位的时候，意味着前j位出现过了r个1，即 $\binom{j}{r}$ ，j从r取到n，进行累加就是等式右边。
+
+该恒等式在帕斯卡三角形上的反映：
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/3e89f598-068b-4655-a9e9-299ec3c67e6e" width="500" align=" center" />
+
+$$\begin{align\*}\binom{9}{5}=\binom{8}{4}+\binom{8}{5}\\
+=\binom{8}{4}+\binom{7}{4}+\binom{7}{5}\\
+=\binom{8}{4}+\binom{7}{4}+\binom{6}{4}+\binom{6}{5}\\
+=\binom{8}{4}+\binom{7}{4}+\binom{6}{4}+\binom{5}{4}+\binom{5}{5}\\
+=\binom{8}{4}+\binom{7}{4}+\binom{6}{4}+\binom{5}{4}+\binom{4}{4}
+\end{align\*}$$
+
+恒等式 $k\binom{n}{k}=n\binom{n-1}{k-1}$ ：从n个队员中选择k个参加比赛，再从k个参加比赛的队员中选出一个队长，与直接从n个队员中选出一个队长，再从剩下的n-1个队员中选出k-1个参加比赛是等价的。
+
+恒等式 $\binom{n}{r}\binom{r}{k}=\binom{n}{k}\binom{n-k}{r-k}$ ：从n个人当中选出r个参加第一轮面试，再从r个人中选出k个参加第二轮面试，等价于从n个人中选出k个人跳过第一轮面试而直接参加第二轮面试，再从剩下的n-k个人中选出r-k个只能参加第一轮面试而无法参加第二轮面试，两种方法最后都是选出k个人参加第二轮面试。（只不过第二种方法更有暗箱操作一些，k个人直接晋级而剩下的r-k个人沦为炮灰）
+
+恒等式 $\sum_{k=1}^nk\binom{n}{k}=n2^{n-1}$ ：对于一个固定的k，从n个人当中选出k个人组队，从k个人当中选出队长，k可以是1,2,3...,n，对方法数进行累加，与直接从n个人当中选出一个队长，剩下的n-1个人每个人都有两种选择，要么加入队伍，要么不加入队伍是等价的。
+
