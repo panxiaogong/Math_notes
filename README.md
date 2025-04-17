@@ -2,9 +2,10 @@
 > *点燃你的数学激情，构建CS必备的数学思维！*
 
 <div align="center">
-[![Stars](https://img.shields.io/github/stars/YourUsername/Math_notes?style=for-the-badge&color=gold)](https://github.com/YourUsername/Math_notes/stargazers)
-[![Forks](https://img.shields.io/github/forks/YourUsername/Math_notes?style=for-the-badge&color=blue)](https://github.com/YourUsername/Math_notes/network/members)
-[![Contributors](https://img.shields.io/github/contributors/YourUsername/Math_notes?style=for-the-badge&color=green)](https://github.com/YourUsername/Math_notes/graphs/contributors)
+  
+[![Stars](https://img.shields.io/github/stars/panxiaogong/Math_notes?style=for-the-badge&color=gold)](https://github.com/panxiaogong/Math_notes/stargazers)
+[![Forks](https://img.shields.io/github/forks/panxiaogong/Math_notes?style=for-the-badge&color=blue)](https://github.com/panxiaogong/Math_notes/network/members)
+[![Contributors](https://img.shields.io/github/contributors/panxiaogong/Math_notes?style=for-the-badge&color=green)](https://github.com/panxiaogong/Math_notes/graphs/contributors)
 
 <img src="https://media.giphy.com/media/3o7buceWnERhgk3gfS/giphy.gif" width="450px">
 
