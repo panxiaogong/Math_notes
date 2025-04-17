@@ -25,7 +25,8 @@
     </td>
   </tr>
 </table>
-## 🌟 内容亮点
+
+##  🌟 内容亮点
 
 - 💎 **线性代数** - 向量、矩阵、特征值和那些令人头疼的变换
 - 🔮 **离散数学** - 集合论、图论、逻辑与证明方法
@@ -37,6 +38,7 @@
 <div align="center">
   <img src="https://miro.medium.com/max/1400/1*oNcFEZDEBnHBMcgcBHr-0Q.gif" width="400px">
 </div>
+
 ## 🎯 学习路线图
 
 ```mermaid
