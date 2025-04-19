@@ -102,6 +102,6 @@ $$\begin{align\*}
 F(x,y,z)=0\\
 G(x,y,z)=0\\
 \end{cases}
-\end{align\*}
+\end{align\*}$$
 
 &emsp;&emsp;
