@@ -239,6 +239,13 @@ G'_x & G'_y
 \end{align\*}$$
 
 
+### 空间曲面的切平面和法线
+
+设空间曲面的方程为 $F(x,y,z)=0$ ， $M(x_0,y_0,z_0)$ 是曲面上一点，设函数F(x,y,x)在该点有连续的偏导数，且同时不为0，我们在曲面上任取一条过点 $M(x_0,y_0,z_0)$ 的曲线 $\Gamma$ ，设曲线 $\Gamma$ 的参数方程为 $x=\varphi(t),y=\psi(t),z=\omega(t)$ ，易知曲线 $\Gamma$ 在点M处的切向量为( $\varphi'(t_0)$ , $\psi'(t_0)$ , $\omega'(t_0)$ )，又因为
+
+$$\begin{align\*}
+F\[\varphi(t),\psi(t),\omega(t)\]\equiv0
+\end{align\*}$$
 
 
 
