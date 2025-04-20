@@ -104,4 +104,155 @@ G(x,y,z)=0\\
 \end{cases}
 \end{align\*}$$
 
-&emsp;&emsp;
+&emsp;&emsp;我们把y,x看作是x的函数(至于为什么一会再说)， $y=\psi(x),z=\omega(x)$ ,对隐函数两边同时求偏导，可得：
+
+$$\begin{align\*}
+\begin{cases}
+\frac{\partial F}{\partial x}+\frac{\partial F}{\partial y}\frac{dy}{dx}+\frac{\partial F}{\partial z}\frac{dz}{dx}=0\\
+\frac{\partial G}{\partial x}+\frac{\partial G}{\partial y}\frac{dy}{dx}+\frac{\partial G}{\partial z}\frac{dz}{dx}=0
+\end{cases}
+\end{align\*}$$
+
+> 个人理解，对于每个确定的x值，其实都确定了一个未知量是y，z的方程组，两个方程，两个未知数，所以一定能够把两个未知数解出来。换句话说，真正自由的变量是x，而y和z都随着x的确定而确定，
+> 所以我们说y和z分别是关于x的函数。
+
+&emsp;&emsp;即：
+
+$$\begin{align\*}
+\begin{cases}
+F_y'\psi'(x)+F_z'\omega'(x)=-F_x'\\
+G_y'\psi'(x)+G_z'\omega'(x)=-G_z'
+\end{cases}
+\end{align\*}$$
+
+&emsp;&emsp;我们将点M $(x_0,y_0,x_0)$ 代入，就获得了上述关于 $\psi'(x),\omega'(x)$ 的二元一次方程组(因为此时F或G对于x,y,z的偏导数都确定了，即方程的系数都已知了）
+
+&emsp;&emsp;根据线性代数的知识(尽管我在写这里时还没有开始更新线性代数的笔记)
+
+$$\begin{align\*}
+\psi'(x_0) = \frac{
+\begin{vmatrix}
+-F'_x & F'_z \\
+-G'_x & G'_z
+\end{vmatrix}_M
+}{
+\begin{vmatrix}
+F'_y & F'_z \\
+G'_y & G'_z
+\end{vmatrix}_M
+}=\frac{
+-\begin{vmatrix}
+F'_x & F'_z \\
+G'_x & G'_z
+\end{vmatrix}_M
+}{
+\begin{vmatrix}
+F'_y & F'_z \\
+G'_y & G'_z
+\end{vmatrix}_M
+}=\frac{
+\begin{vmatrix}
+F'_z & F'_x \\
+G'_z & G'_x
+\end{vmatrix}_M
+}{
+\begin{vmatrix}
+F'_y & F'_z \\
+G'_y & G'_z
+\end{vmatrix}_M
+}\\
+\omega'(x_0)=\frac{
+\begin{vmatrix}
+F'_y & -F'_x \\
+G'_y & -G'_x
+\end{vmatrix}_M
+}{
+\begin{vmatrix}
+F'_y & F'_z \\
+G'_y & G'_z
+\end{vmatrix}_M
+}=\frac{
+\begin{vmatrix}
+F'_x & F'_y \\
+G'_x & G'_y
+\end{vmatrix}_M
+}{
+\begin{vmatrix}
+F'_y & F'_z \\
+G'_y & G'_z
+\end{vmatrix}_M
+}
+\end{align\*}$$
+
+&emsp;&emsp;故曲线在点M处的切向量为 $(1,\psi'(x_0),\omega'(x_0))$ 或：
+
+$$\begin{align\*}
+T=\Bigg(\begin{vmatrix}
+F'_y & F'_z \\
+G'_y & G'_z
+\end{vmatrix}_M,
+\begin{vmatrix}
+F'_z & F'_x \\
+G'_z & G'_x
+\end{vmatrix}_M,
+\begin{vmatrix}
+F'_x & F'_y \\
+G'_x & G'_y
+\end{vmatrix}_M\Bigg)
+\end{align\*}$$
+
+&emsp;&emsp;所以曲线在该点的切线方程为
+
+$$\begin{align\*}
+\frac{x-x_0}
+{\begin{vmatrix}
+F'_y & F'_z \\
+G'_y & G'_z
+\end{vmatrix}_M}=
+\frac{y-y_0}
+{\begin{vmatrix}
+F'_z & F'_x \\
+G'_z & G'_x
+\end{vmatrix}_M}=
+\frac{z-z_0}
+{\begin{vmatrix}
+F'_x & F'_y \\
+G'_x & G'_y
+\end{vmatrix}_M}
+\end{align\*}$$
+
+&emsp;&emsp;法平面方程为
+
+$$\begin{align\*}
+\begin{vmatrix}
+F'_y & F'_z \\
+G'_y & G'_z
+\end{vmatrix}_M(x-x_0)+
+\begin{vmatrix}
+F'_z & F'_x \\
+G'_z & G'_x
+\end{vmatrix}_M(y-y_0)+
+\begin{vmatrix}
+F'_x & F'_y \\
+G'_x & G'_y
+\end{vmatrix}_M(z-z_0)=0
+\end{align\*}$$
+
+
+### 空间曲面的切平面和法线
+
+设空间曲面的方程为 $F(x,y,z)=0$ ， $M(x_0,y_0,z_0)$ 是曲面上一点，设函数F(x,y,x)在该点有连续的偏导数，且同时不为0，我们在曲面上任取一条过点 $M(x_0,y_0,z_0)$ 的曲线 $\Gamma$ ，设曲线 $\Gamma$ 的参数方程为 $x=\varphi(t),y=\psi(t),z=\omega(t)$ ，易知曲线 $\Gamma$ 在点M处的切向量为( $\varphi'(t_0)$ , $\psi'(t_0)$ , $\omega'(t_0)$ )，又因为
+
+$$\begin{align\*}
+F\[\varphi(t),\psi(t),\omega(t)\]\equiv0
+\end{align\*}$$
+
+
+
+
+
+
+
+
+
+
