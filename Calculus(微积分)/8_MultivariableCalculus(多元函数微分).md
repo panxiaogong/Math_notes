@@ -247,10 +247,59 @@ $$\begin{align\*}
 F\[\varphi(t),\psi(t),\omega(t)\]\equiv0
 \end{align\*}$$
 
+&emsp;&emsp;上式两边对 $t=t_0$ 求全导数，有
 
+$$\begin{align\*}
+F_x'(x_0,y_0,z_0)\varphi'(t_0)+F_y'(x_0,y_0,z_0)\psi'(t_0)+F_z'(x_0,y_0,z_0)\omega'(t_0)=0
+\end{align\*}$$
 
+&emsp;&emsp;如果我们令向量 $n$ 为：
 
+$$\begin{align\*}
+(F_x'(x_0,y_0,z_0),F_y'(x_0,y_0,z_0),F_z'(x_0,y_0,z_0))
+\end{align\*}$$
 
+&emsp;&emsp;那么就会有向量 $n$ 与切向量垂直（这也是个人觉得非常巧妙的一个推导）。我们以向量 $n$ 为法向量，过点M做平面，则曲线 $\Gamma$ 在点M处的切线在此平面上。
+
+&emsp;&emsp;而在我们刚才的讨论过程中，曲线 $\Gamma$ 是任取的，所以：曲面上所有通过点M的曲线，在点M处的切线都在同一平面上。该平面称为曲面在点M处的切平面。方程为：
+
+$$\begin{align\*}
+F_x'(x_0,y_0,z_0)(x-x_0)+F_y'(x_0,y_0,z_0)(y-y_0)+F_z'(x_0,y_0,z_0)(z-z_0)=0
+\end{align\*}$$
+
+&emsp;&emsp;过点M且垂直于曲面在点M处切平面的直线称为曲面在点M处的法线，其方程为：
+
+$$\begin{align\*}
+\frac{x-x_0}{F_x'(x_0,y_0,z_0)}=\frac{y-y_0}{F_y'(x_0,y_0,z_0)}=\frac{z-z_0}{F_z'(x_0,y_0,z_0)}
+\end{align\*}$$
+
+&emsp;&emsp;垂直于切平面的向量称为法向量，故向量 $n$ 就是一个法向量。
+
+&emsp;&emsp;另外，当曲面由显式方程 $z=f(x,y)$ 给出时,我们可以做如下操作：
+
+$$\begin{align\*}
+F(x,y,z)=f(x,y)-z
+\end{align\*}$$
+
+&emsp;&emsp;所以我们能得到切平面的法向量为 $(f_x'(x,y),f_y'(x,y),-1)$ 。
+
+### 习题：
+
+&emsp;&emsp;1.设函数 $f(x,y)$ 在点(0,0)附近有定义，且 $f_x'(0,0)=3,f_y'(0,0)=1$ ,则：\
+&emsp;&emsp;A. $dz|_{(0,0)}=3dx+dy$ \
+&emsp;&emsp;B.曲 $z=f(x,y)$ 在点(0,0)处的法向量为(3,1,1)\
+&emsp;&emsp;C.曲线 $z=f(x,y),y=0$ 在点(0,0)处的切向量为(1,0,3)\
+&emsp;&emsp;D.曲线 $z=f(x,y),y=0$ 在点(0,0)处的切向量为(3,0,1)
+
+&emsp;&emsp;分析：偏导数存在且连续才能保证函数可微，故A错误；曲线方程由 $z=f(x,y)$ 显式给出，所以法向量为(3,1,-1)，故B错误。对于C，曲线 $z=f(x,y),y=0$ 其实就是曲面 $f(x,y)$ 与平面 $y=0$ 的交线，所以曲线 $z=f(x,y),y=0$ 在点(0,0)处的切线其实就在平面 $xOz$ 内，我们类比之前推导过的操作，应有如下的等式：
+
+$$\begin{align\*}
+\frac{x-0}{\Delta x}=\frac{z-0}{\Delta z}\Rightarrow\frac{x-0}{\frac{\Delta x}{\Delta x}}=\frac{z-0}{\frac{\Delta z}{\Delta x}}\Rightarrow\frac{x-0}{1}=\frac{z-0}{f_x'(0,0)} \\
+\end{align\*}$$
+
+&emsp;&emsp;故曲线 $z=f(x,y),y=0$ 在点(0,0)处的切向量为(1,0,3)，C正确
+
+&emsp;&emsp;2.试证曲面 $z=xf(\frac{y}{x})$ 上任意一点处的切平面都过原点。
 
 
 
