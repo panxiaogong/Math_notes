@@ -415,5 +415,28 @@ u(u-1)(u-2)...(u-k+1)/k!\\;\\;\\;k>0\\
 \end{cases}
 \end{align\*}$$
 
+&emsp;&emsp;特别地，当 $n$ 是正整数时，我们有
+
+$$\begin{align\*}
+\binom{-n}{k}=\frac{(-n)(-n-1)...(-n-k+1)}{k!}\\
+=(-1)^k\frac{(n)(n+1)...(n+k-1)}{k!}\\
+=(-1)^k\frac{(n+k-1)(n+k)...(n+1)n}{k!}\\
+=(-1)^k\binom{n+k-1}{k}
+\end{align\*}$$
+
+#### 广义二项式定理
+
+&emsp;&emsp;令 $x，u$ 为实数并且 $x$ 的绝对值小于1，广义二项式定理如下
+
+$$\begin{align\*}
+(1+x)^u=\sum_{k=0}^{\infty}\binom{u}{k}x^k
+\end{align\*}$$
+
+&emsp;&emsp;根据广义二项式定理，我们能得到
+
+$$\begin{align\*}
+f(x)=\frac{1}{(1+x)^n}=\sum_{k=0}^{\infty}\binom{-n}{k}x^k=\sum_{k=0}^{\infty}(-1)^k\binom{n+k-1}{k}x^k\\
+f(x)=\frac{1}{(1-x)^n}=\sum_{k=0}^{\infty}\binom{-n}{k}(-x)^k=\sum_{k=0}^{\infty}\binom{n+k-1}{k}x^k
+\end{align\*}$$
 
 
