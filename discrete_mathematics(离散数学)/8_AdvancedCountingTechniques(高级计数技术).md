@@ -439,4 +439,24 @@ f(x)=\frac{1}{(1+x)^n}=\sum_{k=0}^{\infty}\binom{-n}{k}x^k=\sum_{k=0}^{\infty}(-
 f(x)=\frac{1}{(1-x)^n}=\sum_{k=0}^{\infty}\binom{-n}{k}(-x)^k=\sum_{k=0}^{\infty}\binom{n+k-1}{k}x^k
 \end{align\*}$$
 
+### 常用的生成函数
 
+我们有如下这些常用的生成函数
+
+| 生成函数                                                     | 生成函数对应的序列        |
+| ------------------------------------------------------------ | ------------------------- |
+|$(1+x)^n=\sum_{k=0}^nC(n,k)x^k=1+C(n,1)x+C(n,2)x^2+...+x^n$   |          $C(n,k)$         |
+|$(1+ax)^n=\sum_{k=0}^nC(n,k)a^kx^k=1+C(n,1)ax+C(n,2)a^2x^2+...+a^nx^n$|$a^kC(n,k)$        |
+|$(1+x^r)^n=\sum_{k=0}^nC(n,k)x^{kr}=1+C(n,1)x^r+C(n,2)x^{2r}+...+x^{nr}$|如果r\|k，则为 $C(n,k/r)$ ，否则为0|
+|$\frac{1-x^{n+1}}{1-x}=\sum_{k=0}^nx^k=1+x+x^2+...+x^n$ |如果 $k\leqslant n$ ，则为1，否则为0|
+|$\frac{1}{1-x}=\sum_{k=0}^nx^k=1+x+x^2+...$ |   1                        |
+|$\frac{1}{1-ax}=\sum_{k=0}^nx^k=1+ax+a^2x^2+...$ |            $a^k$             |
+|$\frac{1}{1-x^r}=\sum_{k=0}^nx^{kr}=1+x^r+x^{2r}+...$ |如果r\|k，则为1，否则为0|
+| $\frac{1}{(1-x)^2}=\sum_{k=0}^{\infty}(k+1)x^k=1+2x+3x^2+...$ | $k+1$                     |
+| $\frac{1}{(1-x)^n}=\sum_{k=0}^{\infty}C(n+k-1,k)x^k=1+C(n,1)x+C(n+1,2)x^2+...$ | $C(n+k-1,k)=C(n+k-1,n-1)$ |
+| $\frac{1}{(1+x)^n}=\sum_{k=0}^{\infty}C(n+k-1,k)(-1)^kx^k=1-C(n,1)x+C(n+1,2)x^2-...$ | $(-1)^kC(n+k-1,k)=(-1)^kC(n+k-1,n-1)$ |
+|$\frac{1}{(1-ax)^n}=\sum_{k=0}^{\infty}C(n+k-1,k)a^kx^k=1+C(n,1)ax+C(n+1,2)a^2x^2+...$ |$a^kC(n+k-1,k)=a^kC(n+k-1,n-1)$|
+| $e^x=\sum_{k=0}^{\infty}\frac{x^k}{k!}=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+...$      |$\frac{1}{k!}$|
+|$ln(1+x)=\sum_{k=1}^{\infty}\frac{(-1)^{k+1}}{k}x^k=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}...$|    $\frac{(-1)^{k+1}}{k}$    |
+
+### 生成函数的应用
