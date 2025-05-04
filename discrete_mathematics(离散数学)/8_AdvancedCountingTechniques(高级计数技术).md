@@ -358,3 +358,48 @@ pn2^n+qn+r
 &emsp;&emsp;故最后的解形如 $a_n=\alpha2^n+\beta3^n+n2^n+2n=3$ ，再利用初值解出 $\alpha$ , $\beta$ 。
 
 &emsp;&emsp;最后解得 $a_n=2^n+3^n+n2^n+2n=3$ 
+
+## 生成函数
+
+&emsp;&emsp;我们现有一个实数序列 $a_0,a_1,...,a_k,...$ ，该序列对应的生成函数是如下形式的无穷级数
+
+$$\begin{align\*}
+G(x)=a_0+a_1x+...+a_kx^k+...=\sum_{k=0}^{\infty}a_kx^k\\
+\end{align\*}$$
+
+&emsp;&emsp;实际上，对于一个有限序列 $a_0,a_1,...,a_n$ ,我们补充 $a_{n+1}=a_{n+2}=...=0$ ,同样也能得到该序列的生成函数。
+
+&emsp;&emsp;比如说，对于序列1，1，1，1，1，1，它的生成函数是
+
+$$\begin{align\*}
+1+x+x^2+x^3+x^4+x^5=\frac{1-x^6}{1-x}
+\end{align\*}$$
+
+&emsp;&emsp;你会发现，该序列的生成函数可以化简为非常简单的形式！其实这也是生成函数的一个巨大作用。
+
+### 生成函数的加法和乘法
+
+&emsp;&emsp;设有生成函数 $f(x)=\sum_{k=0}^{\infty}a_kx^k$ 和 $g(x)=\sum_{k=0}^{\infty}b_kx^k$ ，那么我们有
+
+$$\begin{align\*}
+f(x)+g(x)=\sum_{k=0}^{\infty}(a_k+b_k)x^k\\
+f(x)g(x)=\sum_{k=0}^{\infty}(\sum_{j=0}^ka_jb_{k-j})x^k
+\end{align\*}$$
+
+&emsp;&emsp;那么我们该如何合理地使用生成函数的加法与乘法呢？
+
+&emsp;&emsp;举个例子，比如 $f(x)=\frac{1}{(1-x)^2}$ 。
+
+&emsp;&emsp;显然，我们有
+
+$$\begin{align\*}
+1+x+x^2+...=\frac{1}{1-x}
+\end{align\*}$$
+
+&emsp;&emsp;所以
+
+$$\begin{align\*}
+f(x)=\frac{1}{(1-x)^2}=(1+x+x^2+...)(1+x+x^2+...)=\sum_{k=0}^{\infty}(k+1)x^k
+\end{align\*}$$
+
+###
