@@ -153,3 +153,24 @@ $$\begin{align\*}
 \end{align\*}$$
 
 ## 特殊的简单图
+
+&emsp;&emsp;完全图 $K_n$ ：有 $n$ 个顶点，任意两个顶点之间都会有一条边，如下图所示为 $K_5$ 
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/25cbf20e-e29f-4cd9-96eb-3023444e876c" width="150" />
+
+&emsp;&emsp;圈图 $C_n$ ：有 $n$ 个顶点，恰好形成一个环。如下图所示为 $C_5$ 
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/92bc883f-60d9-4ca9-b8c3-a229f4b97fd3" width="150" />
+
+&emsp;&emsp;轮图 $W_n$ ：有 $n+1$ 个顶点，恰好形成一个车轮似的环，如下图所示为 $W_5$ 
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/ccf05422-6e8d-4b14-9a0b-d248c13130f6" width="150" />
+
+&emsp;&emsp; $n$ 立方体图 $Q_n$ ：用顶点表示 $2^n$ 个长度为 $n$ 的比特串的图，两个顶点相邻，当且仅当他们所表示的比特串恰有一位不同。如下显示为 $Q_3$
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/b6593a7b-a111-468e-b416-c225cd00509d" width="150" />
+
