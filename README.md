@@ -7,7 +7,6 @@
 [![Forks](https://img.shields.io/github/forks/panxiaogong/Math_notes?style=for-the-badge&color=blue)](https://github.com/panxiaogong/Math_notes/network/members)
 [![Contributors](https://img.shields.io/github/contributors/panxiaogong/Math_notes?style=for-the-badge&color=green)](https://github.com/panxiaogong/Math_notes/graphs/contributors)
 
-<img src="https://media.giphy.com/media/3o7buceWnERhgk3gfS/giphy.gif" width="450px">
 
 </div>
 
@@ -15,8 +14,6 @@
 
 <table>
   <tr>
-    <td>
-      <img src="https://media.giphy.com/media/l0HlHFRbmaZtBRhXG/giphy.gif" width="200px" align="center">
     </td>
     <td>
       <p>作为一名计算机专业的大一本科生，各种各样的数学知识学起来真的很难受，对吧？🤯</p>
@@ -28,10 +25,11 @@
 
 ##  🌟 内容亮点
 
+- 🚀 **微积分** - 每一个工科学生必会的数学知识
 - 💎 **线性代数** - 向量、矩阵、特征值和那些令人头疼的变换
 - 🔮 **离散数学** - 集合论、图论、逻辑与证明方法
-- 🧩 **概率与统计** - 从基础概率到机器学习必备统计知识
-- 🚀 **数值计算** - 计算机如何处理数值计算问题
+- 🧩 **概率论与数理统计** - 从基础概率到机器学习必备统计知识
+
 
 ## 💫 视觉化学习
 
